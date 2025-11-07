@@ -25,9 +25,8 @@ data = pd.DataFrame({
 # Compute similarity (example: Levenshtein for names, exact for city)
 name_sim = pairwise_distances(data['name'], metric=lambda x, y: distance(x, y)) #reminder: distance is levenshtein distance here.
 surname_sim = pairwise_distances(data['surname'], metric=lambda x, y: distance(x, y))
-city_sim = pairwise_distances(data['city'], metric=lambda x, y: distance(x, y))
-
-print(city_sim)
+city_sim = pairwise_distances(data['city'], metric=lambda x, y: distance(x, y)) #account for minor typos in city names. But generally, if same city then same city.
+#for age: we can use a simple euclidean distance, BUT more than 5 year difference shuold not change anything - I mean bigger than 5y it's just not the same person.
 
 # Combine scores (weighted)
 total_sim = 0.5*name_sim + 0.3*surname_sim + 0.2*city_sim #weight scores by importance. For example: For example:
@@ -97,3 +96,7 @@ for k, col in zip(unique_labels, colors):
 
 plt.title(f"Estimated number of clusters: {n_clusters_}")
 plt.show()
+
+
+
+## OK LA SUITE: créer un joli graph avec javascriiiiiptttt hihi.
