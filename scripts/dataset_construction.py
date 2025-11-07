@@ -23,9 +23,6 @@ def load_datasets():
     surnames= p.read_csv(path_surnames+"/surname-database.csv", separator=";")
     names = p.read_csv(path_names+"/first-name-database.csv", separator=";")
 
-    surnames = surnames.drop(["Country code", "Continent", "Official", "Country Rank"])
-    names = names.drop(["Country code", "Continent", "Official", "Country Rank"])
-
     return surnames, names
 
 def clean_datasets(surnames, names):
