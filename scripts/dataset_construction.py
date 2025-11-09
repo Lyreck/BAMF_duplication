@@ -6,6 +6,7 @@
 import polars as p
 import kagglehub
 from kagglehub import KaggleDatasetAdapter
+import os
 
 def load_datasets():
     """ 
@@ -20,8 +21,12 @@ def load_datasets():
     path_surnames = kagglehub.dataset_download("namecensus/name-census-top-100-surnames")
     path_names = kagglehub.dataset_download("namecensus/first-name-database")
 
-    surnames= p.read_csv(path_surnames+"/surname-database.csv", separator=";")
-    names = p.read_csv(path_names+"/first-name-database.csv", separator=";")
+    # Move files to clean location
+    os.rename(path_surnames+"/surname-database.csv", "scripts/surname-database.csv")
+    os.rename(path_names+"/first-name-database.csv", "scripts/first-name-database.csv")
+
+    surnames= p.read_csv("scripts/surname-database.csv", separator=";")
+    names = p.read_csv("scripts/first-name-database.csv", separator=";")
 
     return surnames, names
 
