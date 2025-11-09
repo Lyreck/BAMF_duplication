@@ -100,3 +100,22 @@ plt.show()
 
 
 ## OK LA SUITE: créer un joli graph avec javascriiiiiptttt hihi.
+
+## Build a list of nodes
+nodes = data["name"].values
+
+## Build the list of edges: nodes are connected if and only if they are in the same cluster.
+print(clusters.labels_)
+
+dic={}
+
+dic = {node: label} for node,label in zip(nodes, clusters.labels_)
+for label,node in zip(clusters.labels_, nodes):
+nod
+
+    
+
+## Represent the graph using networks
+
+## Represent the graph using d3.js
+
