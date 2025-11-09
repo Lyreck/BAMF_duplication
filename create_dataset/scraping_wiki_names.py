@@ -59,3 +59,5 @@ print(result.head(10))
 
 # Je vais refaire du cleaning dessus plus tard :) 
 
+# Now trying to get men's names - and filtering by the () after the name ? Hmm 
+
