@@ -68,3 +68,5 @@ for k in text :
 
 # j'ai une erreur unicode ? je pense qu'il faut que je change qq chose mais idk how :) 
 # run $env:PYTHONUTF8=1 from powershell
+
+# can also try translit-ua package :)
