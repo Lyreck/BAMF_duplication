@@ -64,7 +64,7 @@ tr = Transliterator()
 text = ["Дарія","Одарка","Дарина","Дарка","Дарья","Дар'я"]
 for k in text : 
     print('Ukrainians specific')
-    print(tr.transliterate(k))
+    print(tr.transliterate("",k,""))
 
 # j'ai une erreur unicode ? je pense qu'il faut que je change qq chose mais idk how :) 
-
+# run $env:PYTHONUTF8=1 from powershell
