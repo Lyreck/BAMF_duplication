@@ -6,4 +6,6 @@ from names_translator import Transliterator
 # Dataset structure : 
 # language, name, surname
 
+# Créer un dataset translitéré : langue, prénom, sa transliteration expected, 
+
 
