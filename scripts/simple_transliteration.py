@@ -3,11 +3,13 @@
 # And since I already found 3 techniques for duplicate detection (levenshtein, Soundex, G2P models) then it's easier to be focused on that.
 
 #Ok chef mais je vais le faire quand meme hihihi bc I can 
-from transliterate import translit, get_available_language_codes
+#from transliterate import translit, get_available_language_codes
 import cyrtranslit as ctlt 
 import polars as p 
 
 from names_translator import Transliterator
+
+from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish, RussianGOST2006
 
 # loading csvs : 
 
@@ -23,10 +25,10 @@ UA_surnames = p.read_csv("../create_dataset/ukr_surnames.csv")
 
 #using transliterate
 dico = {}
-print(get_available_language_codes())
+# print(get_available_language_codes())
 
 df_translit = UA_fem_name.head(10)
-for row in df_translit.iter_rows():
+""" for row in df_translit.iter_rows():
     for j in row :
         if j == None : 
             pass
@@ -34,7 +36,7 @@ for row in df_translit.iter_rows():
             t = translit(j,'uk', reversed = True)
             dico[t] = j 
 
-print(dico)
+print(dico) """
 
 # and now with cytranslit
 
@@ -70,3 +72,13 @@ for k in text :
 # run $env:PYTHONUTF8=1 from powershell
 
 # can also try translit-ua package :)
+
+text = ["Дарія","Одарка","Дарина","Дарка","Дарья","Дар'я"]
+for k in text : 
+    print('Translitua KMU')
+    print(translit(k, UkrainianKMU))
+    print("Translitua German")
+    print(translit(k, UkrainianGerman))
+    print("Translitua British")
+    print(translit(k, UkrainianBritish))
+
