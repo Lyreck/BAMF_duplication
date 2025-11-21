@@ -1,8 +1,10 @@
 # from transliterate import translit, get_available_language_codes
-# import cyrtranslit as ctlt 
 import icu
 import polars as pl 
 import csv
+from names_translator import Transliterator
+import cyrtranslit as ctlt 
+from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish, RussianGOST2006
 # from names_translator import Transliterator
 
 # Dataset structure : 
@@ -27,13 +29,14 @@ def build_ukrainian_dataset(dataset_name="test_dataset"):
         polars dataframe: dataframe corresponding to the created csv dataset.
     """
 
-    UA_fem_name = pl.read_csv("scripts/ukr_female_names.csv")
-    # UA_male_name = p.read_csv("ukr_male_names.csv")
-    UA_surnames = pl.read_csv("scripts/ukr_surnames.csv")
+    UA_fem_name = pl.read_csv("create_dataset/ukr_female_names.csv")
+    UA_male_name = pl.read_csv("create_dataset/ukr_male_names.csv")
+    UA_surnames = pl.read_csv("create_dataset/ukr_surnames.csv")
 
     # build the list of of lists of similar names:
     _, UA_fem_names_list  = build_list_of_lists(UA_fem_name)
     _, UA_surnames_list = build_list_of_lists(UA_surnames)
+
 
 
     # Initialize Transliterator(s)
@@ -60,3 +63,26 @@ def build_ukrainian_dataset(dataset_name="test_dataset"):
 
     return created_dataset
 
+def build_list_of_lists(df):
+    """Transform a polars dataframe with names and given names of columns
+
+    Args:
+        df (polars dataframe): dataframe of origin, each line containing a name and its variants.
+
+    Returns:
+        list: list of lists. Each sub-list contains names (str) that are similar.
+        list: list of all the names (str) in the dataframe.
+    """
+
+    l1= []
+    l2 = []
+    for row in df.rows(named=True):
+        similar_names = []
+        for key in df.columns:
+            if row[key] not in ["", None]: #most of them are empty.
+                similar_names.append(row[key])
+                l2.append(row[key])
+
+        l1.append(similar_names)
+    
+    return l1,l2
