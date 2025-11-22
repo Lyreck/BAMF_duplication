@@ -1,0 +1,156 @@
+gender,language,name,surname
+female,uk,Меланія,Тараненко
+female,uk,Меланка, Таранюк
+female,uk,Маланка, Таран
+female,uk,Мелашка, Таранов
+female,uk,Малашка, Тараник
+female,uk,Мелана, Таранишин
+female,uk,Малана, Таранець
+male,uk,Димитрій,Млинар
+male,uk,Дмитро, Млинарчук
+female,uk,Валерія,Томко
+female,uk,Лера, Томенко
+female,uk,Лєра, Томченко
+female,uk,Леруня, Томишин
+female,uk,Леруся, Томчишин
+female,uk,Леруша, Томин
+female,uk,Лерочка, Томич
+female,uk,Дарія,Хоменко
+female,uk,Одарка, Хомченко
+female,uk,Дарина, Хомчак
+female,uk,Дарка, Хома
+female,uk,Дарья, Хомич
+female,uk,Дар'я, Хомець
+male,uk,Авраам,Портний
+male,uk,Авраамій, Портнюк
+male,uk,Аврамій, Портненко
+male,uk,Григорій,Романенко
+male,uk,Гриць, Ромасенко
+male,uk,Григір, Ромашенко
+male,uk,Григор, Ромащенко
+male,uk,Грись, Романченко
+female,uk,Аделаїда,Коваль
+female,uk,Аделіна, Коваленко
+female,uk,Аделя, Ковалюк
+female,uk,Адиля, Ковальчук
+female,uk,Адель, Ковалик
+male,uk,Валент,Залізняк
+male,uk,Уалент, Залізнюк
+male,uk,Микола,Матюш
+male,uk,Миколай, Матяш
+male,uk,Микула, Матюха
+male,uk,Коля, Матюшенко
+male,uk,Гавриїл,Плахотник
+male,uk,Гаврило, Плахотнюк
+female,uk,Ореста,Попенко
+female,uk,Агнеса,Приходько
+female,uk,Агнія, Приходченко
+female,uk,Агна, Приходюк
+female,uk,Августа,Матеєнко
+female,uk,Густа, Матейчук
+male,uk,Никифор,Муха
+male,uk,Ничипір, Мушенко
+male,uk,Нечипір, Мущенко
+male,uk,Никифір, Мущук
+female,uk,Сусанна,Колісник
+female,uk,Сусана, Колісниченко
+female,uk,Сосанна, Колісничук
+female,uk,Зузана, Колесник
+female,uk,Сюзанна, Колесниченко
+female,uk,Агафія,Романів
+female,uk,Агапія, Романов
+female,uk,Гафія, Романій
+female,uk,Гапка, Романіва
+male,uk,Андріан,Мельник
+male,uk,Андріян, Мельниченко
+male,uk,Адріан, Мельничук
+male,uk,Адріан, Мельникович
+female,uk,Ольга,Ґуля
+female,uk,Хельга, Ґуленко
+female,uk,Оля, Ґульченко
+female,uk,Леся, Ґульчук
+female,uk,Олеся, Ґульчак
+female,uk,Орина,Мацьо
+female,uk,Судислава,Тар
+male,uk,Іоан,Чоботар
+male,uk,Іван, Чоботарь
+male,uk,Ваня, Чоботарьов
+male,uk,Йоан, Чоботаренко
+female,uk,Тереза,Матвієнко
+male,uk,Кирило,Фомко
+male,uk,Кирил, Фоменко
+male,uk,Кіріл, Фомченко
+male,uk,Киріл, Фомишин
+male,uk,Цириль, Фомчук
+female,uk,Трояна,Пелех
+female,uk,Анна,Тимчук
+female,uk,Ганна, Тимочук
+female,uk,Анничка, Тимощук
+female,uk,Анка, Тимків
+female,uk,Аня, Тиміш
+male,uk,Юліан,Олійник
+male,uk,Юлій, Олійниченко
+male,uk,Юрій, Олійничук
+male,uk,Юлько, Оліяр
+male,uk,Юлянчик, Оліярчук
+female,uk,Єва,Мокрий
+female,uk,Євгенія, Мокрій
+female,uk,Євгена, Мокренко
+female,uk,Югина, Мокряк
+female,uk,Ївга, Мокрук
+female,uk,Рогволода,Мартиш
+female,uk,Пелагія,Швець
+female,uk,Пелагея, Шевченко
+female,uk,Палагна, Шевчук
+female,uk,Палазга, Шевчик
+female,uk,Палажка, Шевчишин
+female,uk,Пазина, Шевців
+female,uk,Єлизавета,Лисенко
+female,uk,Лизавета, Лисиця
+female,uk,Лисавета, Лисюк
+female,uk,Гальшка, Лисяк
+female,uk,Галшка, Лисняк
+female,uk,Ліза, Лищик
+female,uk,Марія,Шваля
+female,uk,Марічка, Швач
+female,uk,Марійка, Шваченко
+female,uk,Маруся, Швачка
+female,uk,Марися, Швачук
+female,uk,Марічка, Швадюк
+female,uk,Марина, Швадченко
+female,uk,Мстислава,Тарасенко
+female,uk,Агата,Романюк
+female,uk,Аґата, Романчук
+female,uk,Тіна,Пономаренко
+female,uk,Анастасія,Бондар
+female,uk,Настасія, Бондаренко
+female,uk,Настя, Бондарчук
+female,uk,Наста, Бондарець
+female,uk,Настка, Боднар
+male,uk,Алфей,Мурашка
+male,uk,Алфій, Мурашко
+female,uk,Артемізія,Скринник
+female,uk,Артемісія, Скриннік
+female,uk,Артеміса, Скринниченко
+female,uk,Артеміза, Скринніченко
+female,uk,Артемія, Скринничук
+female,uk,Настасія,Кравець
+female,uk,Анастасія, Кравченко
+female,uk,Наста, Кравчук
+female,uk,Настя, Кравчишин
+female,uk,Настка, Кравецький
+female,uk,Ната, Кравців
+female,uk,Нася, Кравцов
+female,uk,Анастасья, Кравчина
+female,uk,Аврелія,Панкратенко
+female,uk,Аурелія, Панко
+female,uk,Аурика, Паненко
+male,uk,Лев,Тимофієнко
+male,uk,Левко, Тимошенко
+male,uk,Левусь, Тимощенко
+male,uk,Левцьо, Тимченко
+male,uk,Левчик, Тимофійчук 
+female,uk,Акилина,Сухенко
+female,uk,Килина, Суханюк
+female,uk,Кулина, Сухенюк
+female,uk,Якилина, Сушко
