@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundex Duplicate Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        
+        #controls {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 180px;
+            font-weight: 500;
+        }
+        
+        input[type="range"] {
+            width: 250px;
+            vertical-align: middle;
+        }
+        
+        input[type="file"] {
+            padding: 8px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #0f3460;
+            color: #eee;
+        }
+        
+        button {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        button:hover {
+            background: #c23649;
+        }
+        
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        #graph {
+            background: #16213e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .node {
+            cursor: pointer;
+            stroke: #fff;
+            stroke-width: 2px;
+        }
+        
+        .node:hover {
+            stroke-width: 3px;
+        }
+        
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        
+        .node-label {
+            font-size: 11px;
+            pointer-events: none;
+            fill: #eee;
+            text-anchor: middle;
+            font-weight: 500;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 12px;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+            display: none;
+            z-index: 1000;
+            max-width: 300px;
+            border: 1px solid #e94560;
+        }
+        
+        #stats {
+            background: #16213e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e94560;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        
+        .legend {
+            margin-top: 15px;
+            font-size: 12px;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        
+        .info-box {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid #e94560;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        /*for search of nodes */
+        .node.highlighted {
+            stroke: #00ff00 !important;
+            stroke-width: 4px !important;
+        }
+
+        .node.dimmed {
+            opacity: 0.3;
+        }
+
+        .link.dimmed {
+            opacity: 0.1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h2 style="margin-top: 0;">Soundex + Levenshtein-Damerau Duplicate Detection</h2>
+        
+        <div class="info-box">
+            <strong>📊 How it works:</strong> Python uses Soundex to pre-filter potential duplicates. 
+            The visualization uses Levenshtein distance for the adjustable similarity threshold.
+        </div>
+        
+        <div class="control-group" style="margin-top: 15px;">
+            <label>Load JSON Data:</label>
+            <input type="file" id="fileInput" accept=".json">
+            <button onclick="loadSampleData()">Load Sample Data</button>
+        </div>
+        
+        <div class="control-group">
+            <label>Levenshtein Threshold:</label>
+            <input type="range" id="threshold" min="0" max="100" value="65" step="5">
+            <span id="thresholdValue">65%</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Show Soundex Groups:</label>
+            <input type="checkbox" id="showSoundex" checked>
+            <span style="margin-left: 10px; font-size: 12px; color: #aaa;">
+                (Highlight names with same Soundex code)
+            </span>
+        </div>
+
+        <div class="control-group">
+            <label>Search Name:</label>
+            <input type="text" id="searchInput" placeholder="Type to search..." style="width: 250px;">
+            <button onclick="clearSearch()">Clear</button>
+        </div>
+        
+        <div class="legend">
+            <div><strong>Node Colors:</strong></div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #4ecdc4;"></span>
+                <span>No Duplicates</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #ffe66d;"></span>
+                <span>Has Duplicates</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #ff6b6b;"></span>
+                <span>High Duplicate Count</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #a855f7;"></span>
+                <span>Same Soundex Group</span>
+            </div>
+        </div>
+    </div>
+    
+    <svg id="graph" width="100%" height="700"></svg>
+    
+    <div id="stats">
+        <div class="stat">
+            <div class="stat-value" id="totalNodes">0</div>
+            <div class="stat-label">Total Names</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="totalLinks">0</div>
+            <div class="stat-label">Connections (Levenshtein)</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="soundexGroups">0</div>
+            <div class="stat-label">Soundex Groups</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="clusters">0</div>
+            <div class="stat-label">Duplicate Clusters</div>
+        </div>
+    </div>
+    
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Damerau-Levenshtein distance calculation
+        function damerauLevenshtein(a, b) {
+            const an = a.length;
+            const bn = b.length;
+            
+            if (an === 0) return bn;
+            if (bn === 0) return an;
+            
+            const matrix = Array(bn + 1).fill(null).map(() => Array(an + 1).fill(0));
+            
+            for (let i = 0; i <= bn; i++) matrix[i][0] = i;
+            for (let j = 0; j <= an; j++) matrix[0][j] = j;
+            
+            for (let i = 1; i <= bn; i++) {
+                for (let j = 1; j <= an; j++) {
+                    const cost = a[j - 1] === b[i - 1] ? 0 : 1;
+                    
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,      // deletion
+                        matrix[i][j - 1] + 1,      // insertion
+                        matrix[i - 1][j - 1] + cost // substitution
+                    );
+                    
+                    // Transposition
+                    if (i > 1 && j > 1 && 
+                        a[j - 1] === b[i - 2] && 
+                        a[j - 2] === b[i - 1]) {
+                        matrix[i][j] = Math.min(
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + cost
+                        );
+                    }
+                }
+            }
+            
+            return matrix[bn][an];
+        }
+
+        // Update the similarity function to use Damerau-Levenshtein
+        function levenshteinSimilarity(s1, s2) {
+            s1 = s1.toLowerCase();
+            s2 = s2.toLowerCase();
+            
+            const distance = damerauLevenshtein(s1, s2);
+            const maxLen = Math.max(s1.length, s2.length);
+            
+            if (maxLen === 0) return 1.0;
+            
+            return 1 - (distance / maxLen);
+        }
+
+        let graphData = null;
+        let selectedNode = null;
+        const width = 1200;
+        const height = 700;
+        
+        const svg = d3.select("#graph");
+        const g = svg.append("g");
+        
+        const zoom = d3.zoom()
+            .scaleExtent([0.1, 4])
+            .on("zoom", (event) => {
+                g.attr("transform", event.transform);
+            });
+        
+        svg.call(zoom);
+        
+        const simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(d => d.id).distance(100))
+            .force("charge", d3.forceManyBody().strength(-300))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide().radius(30));
+
+
+        // Search functionality    
+        let searchResults = [];
+
+        function searchNames() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
+            
+            if (!graphData || !searchTerm) {
+                clearSearch();
+                return;
+            }
+            
+            searchResults = graphData.nodes
+                .map((n, i) => ({...n, index: i}))
+                .filter(n => n.name.toLowerCase().includes(searchTerm));
+            
+            highlightSearchResults();
+        }
+
+        function highlightSearchResults() {
+            g.selectAll("circle")
+                .classed("highlighted", d => searchResults.some(r => r.index === d.id))
+                .classed("dimmed", d => searchResults.length > 0 && !searchResults.some(r => r.index === d.id));
+            
+            g.selectAll("line")
+                .classed("dimmed", d => {
+                    if (searchResults.length === 0) return false;
+                    const sourceId = typeof d.source === 'object' ? d.source.id : d.source;
+                    const targetId = typeof d.target === 'object' ? d.target.id : d.target;
+                    return !searchResults.some(r => r.index === sourceId || r.index === targetId);
+                });
+            
+            g.selectAll("text")
+                .style("opacity", d => {
+                    if (searchResults.length === 0) return 1;
+                    return searchResults.some(r => r.index === d.id) ? 1 : 0.3;
+                });
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = '';
+            searchResults = [];
+            
+            g.selectAll("circle")
+                .classed("highlighted", false)
+                .classed("dimmed", false);
+            
+            g.selectAll("line")
+                .classed("dimmed", false);
+            
+            g.selectAll("text")
+                .style("opacity", 1);
+        }
+
+        // Add event listener for search input (add this near the other event listeners)
+        document.getElementById("searchInput").addEventListener("input", searchNames);
+        
+        function updateGraph() {
+            if (!graphData) return;
+            
+            const threshold = document.getElementById("threshold").value / 100;
+            const showSoundex = document.getElementById("showSoundex").checked;
+            
+            const nodes = graphData.nodes.map((n, i) => ({
+                id: i,
+                name: n.name,
+                expected: n.expected,
+                recordId: n.id,
+                soundex: n.soundex,
+                has_duplicates: n.has_duplicates,
+                connections: 0
+            }));
+            
+            // Create links based on Levenshtein similarity
+            const links = [];
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const sim = levenshteinSimilarity(nodes[i].name, nodes[j].name);
+                    if (sim >= threshold) {
+                        links.push({
+                            source: i,
+                            target: j,
+                            similarity: sim
+                        });
+                        nodes[i].connections++;
+                        nodes[j].connections++;
+                    }
+                }
+            }
+            
+            // Calculate clusters
+            const visited = new Set();
+            let clusterCount = 0;
+            
+            function dfs(nodeId, component) {
+                if (visited.has(nodeId)) return;
+                visited.add(nodeId);
+                component.push(nodeId);
+                
+                links.forEach(link => {
+                    const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+                    const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+                    
+                    if (sourceId === nodeId) dfs(targetId, component);
+                    if (targetId === nodeId) dfs(sourceId, component);
+                });
+            }
+            
+            nodes.forEach((node, i) => {
+                if (!visited.has(i) && node.connections > 0) {
+                    const component = [];
+                    dfs(i, component);
+                    if (component.length > 1) clusterCount++;
+                }
+            });
+            
+            // Count unique Soundex groups
+            const soundexSet = new Set(nodes.map(n => n.soundex));
+            
+            // Update stats
+            document.getElementById("totalNodes").textContent = nodes.length;
+            document.getElementById("totalLinks").textContent = links.length;
+            document.getElementById("soundexGroups").textContent = soundexSet.size;
+            document.getElementById("clusters").textContent = clusterCount;
+            
+            // Clear existing
+            g.selectAll("*").remove();
+            
+            // Draw links
+            const link = g.append("g")
+                .selectAll("line")
+                .data(links)
+                .enter()
+                .append("line")
+                .attr("class", "link")
+                .attr("stroke-width", d => Math.max(1, d.similarity * 4))
+                .attr("stroke-opacity", d => d.similarity * 0.8);
+            
+            // Draw nodes
+            const node = g.append("g")
+                .selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                .attr("class", "node")
+                .attr("r", d => Math.max(8, 8 + d.connections * 2))
+                .attr("fill", d => {
+                    if (showSoundex && selectedNode && selectedNode.soundexGroup && 
+                        selectedNode.soundexGroup.includes(d.name)) {
+                        return "#a855f7";
+                    }
+                    if (d.connections === 0) return "#4ecdc4";
+                    if (d.connections < 3) return "#ffe66d";
+                    return "#ff6b6b";
+                })
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended))
+                .on("mouseover", showTooltip)
+                .on("mouseout", hideTooltip)
+                .on("click", (event, d) => {
+                // Find soundex group for this node
+                if (graphData.soundex_groups) {
+                    for (const [code, names] of Object.entries(graphData.soundex_groups)) {
+                        if (names.includes(d.name)) {
+                            selectedNode = { soundexGroup: names };
+                            updateGraph();
+                            return;
+                        }
+                    }
+                }
+                selectedNode = null;
+                updateGraph();
+            });
+            
+            // Add labels
+            const labels = g.append("g")
+                .selectAll("text")
+                .data(nodes)
+                .enter()
+                .append("text")
+                .attr("class", "node-label")
+                .attr("dy", -15)
+                .text(d => d.name);
+            
+            // Update positions
+            simulation.nodes(nodes).on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+                
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+                
+                labels
+                    .attr("x", d => d.x)
+                    .attr("y", d => d.y);
+            });
+            
+            simulation.force("link").links(links);
+            simulation.alpha(1).restart();
+        }
+        
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+        
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+        
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+        
+        function showTooltip(event, d) {
+            const threshold = document.getElementById("threshold").value / 100;
+            
+            const duplicates = graphData.nodes
+                .filter(n => n.id !== d.recordId && levenshteinSimilarity(d.name, n.name) >= threshold)
+                .map(n => `${n.name} (ID: ${n.id}) ${(levenshteinSimilarity(d.name, n.name) * 100).toFixed(0)}%`)
+                .join('<br>');
+            
+            // Find which soundex group this name belongs to
+            let sameSoundex = '';
+            let soundexCode = 'N/A';
+            
+            if (graphData && graphData.soundex_groups) {
+                for (const [code, names] of Object.entries(graphData.soundex_groups)) {
+                    if (names.includes(d.name)) {
+                        soundexCode = code;
+                        // Filter by record ID, not just name
+                        const otherNodes = graphData.nodes.filter(n => 
+                            n.id !== d.recordId && names.includes(n.name)
+                        );
+                        sameSoundex = otherNodes.map(n => `${n.name} (ID: ${n.id})`).join(', ');
+                        break;
+                    }
+                }
+            }
+            
+            const tooltip = document.getElementById("tooltip");
+            tooltip.innerHTML = `
+                <strong>${d.name}</strong><br>
+                <small>ID: ${d.recordId} | Expected: ${d.expected}</small><br>
+                <small>Soundex: ${soundexCode}</small><br>
+                Levenshtein Connections: ${d.connections}<br>
+                ${sameSoundex ? '<br><strong>Same Soundex Group:</strong><br>' + sameSoundex + '<br>' : ''}
+                ${duplicates ? '<br><strong>Similar (Levenshtein ≥' + (threshold*100).toFixed(0) + '%):</strong><br>' + duplicates : '<br>No Levenshtein matches at current threshold'}
+            `;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (event.pageX + 10) + 'px';
+            tooltip.style.top = (event.pageY - 10) + 'px';
+        }
+                        
+        function hideTooltip() {
+            document.getElementById("tooltip").style.display = 'none';
+        }
+        
+        function loadSampleData() {
+            // Try to load `graph_data.json` located next to this HTML file.
+            // If loading fails (CORS / missing file / parse error), fall back to an embedded sample.
+            fetch('graph_data.json')
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+                    return response.json();
+                })
+                .then(data => {
+                    graphData = data;
+                    updateGraph();
+                })
+                .catch(err => {
+                    console.warn('Could not load graph_data.json, using fallback sample data:', err);
+                    // Fallback sample data (same shape as expected JSON)
+                    graphData = {
+                        "nodes": [
+                            {"name": "Muhammad", "expected": "Muhammad", "id": "1", "soundex": "M530", "has_duplicates": true},
+                            {"name": "Mohammed", "expected": "Muhammad", "id": "2", "soundex": "M530", "has_duplicates": true},
+                            {"name": "Mohamed", "expected": "Muhammad", "id": "3", "soundex": "M530", "has_duplicates": true},
+                            {"name": "Zhang", "expected": "Zhang", "id": "4", "soundex": "Z520", "has_duplicates": true},
+                            {"name": "Chang", "expected": "Zhang", "id": "5", "soundex": "C520", "has_duplicates": true},
+                            {"name": "Evgeny", "expected": "Yevgeny", "id": "6", "soundex": "E125", "has_duplicates": true},
+                            {"name": "Yevgeniy", "expected": "Yevgeny", "id": "7", "soundex": "Y125", "has_duplicates": true},
+                            {"name": "Smith", "expected": "Smith", "id": "8", "soundex": "S530", "has_duplicates": true},
+                            {"name": "Smyth", "expected": "Smith", "id": "9", "soundex": "S530", "has_duplicates": true},
+                            {"name": "Johnson", "expected": "Johnson", "id": "10", "soundex": "J525", "has_duplicates": false}
+                        ],
+                        "soundex_groups": {
+                            "M530": ["Muhammad", "Mohammed", "Mohamed"],
+                            "S530": ["Smith", "Smyth"]
+                        },
+                        "stats": {
+                            "total_records": 10,
+                            "duplicate_groups": 2,
+                            "potential_duplicates": 9
+                        }
+                    };
+                    updateGraph();
+                });
+        }
+        
+        // File upload handler
+        document.getElementById("fileInput").addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    graphData = JSON.parse(event.target.result);
+                    updateGraph();
+                } catch (error) {
+                    alert("Error loading JSON file: " + error.message);
+                }
+            };
+            reader.readAsText(file);
+        });
+        
+        // Threshold slider
+        document.getElementById("threshold").addEventListener("input", (e) => {
+            document.getElementById("thresholdValue").textContent = e.target.value + "%";
+            updateGraph();
+        });
+        
+        // Soundex checkbox
+        document.getElementById("showSoundex").addEventListener("change", updateGraph);
+        
+        // Load sample data on start
+        // loadSampleData();
+    </script>
+</body>
+</html>
