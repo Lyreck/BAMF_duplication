@@ -51,6 +51,6 @@ if __name__ == "__main__":
     df = pl.read_csv("create_dataset/UA_paired.csv", encoding="utf8")
 
     df_out = add_transliterations(df)
-    df.write_csv('UA_tranliterated.csv')
+    df_out.write_csv('UA_tranliterated.csv')
 
     print(df_out)
