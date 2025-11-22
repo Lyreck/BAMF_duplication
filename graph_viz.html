@@ -185,7 +185,7 @@
 </head>
 <body>
     <div id="controls">
-        <h2 style="margin-top: 0;">Soundex + Levenshtein Duplicate Detection</h2>
+        <h2 style="margin-top: 0;">Soundex + Levenshtein-Damerau Duplicate Detection</h2>
         
         <div class="info-box">
             <strong>📊 How it works:</strong> Python uses Soundex to pre-filter potential duplicates. 
@@ -263,46 +263,50 @@
     <div class="tooltip" id="tooltip"></div>
 
     <script>
-        // Levenshtein distance calculation
-        function levenshtein(a, b) {
+        // Damerau-Levenshtein distance calculation
+        function damerauLevenshtein(a, b) {
             const an = a.length;
             const bn = b.length;
-            const matrix = [];
-
+            
             if (an === 0) return bn;
             if (bn === 0) return an;
-
-            for (let i = 0; i <= bn; i++) {
-                matrix[i] = [i];
-            }
-
-            for (let j = 0; j <= an; j++) {
-                matrix[0][j] = j;
-            }
-
+            
+            const matrix = Array(bn + 1).fill(null).map(() => Array(an + 1).fill(0));
+            
+            for (let i = 0; i <= bn; i++) matrix[i][0] = i;
+            for (let j = 0; j <= an; j++) matrix[0][j] = j;
+            
             for (let i = 1; i <= bn; i++) {
                 for (let j = 1; j <= an; j++) {
-                    if (b.charAt(i - 1) === a.charAt(j - 1)) {
-                        matrix[i][j] = matrix[i - 1][j - 1];
-                    } else {
+                    const cost = a[j - 1] === b[i - 1] ? 0 : 1;
+                    
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j] + 1,      // deletion
+                        matrix[i][j - 1] + 1,      // insertion
+                        matrix[i - 1][j - 1] + cost // substitution
+                    );
+                    
+                    // Transposition
+                    if (i > 1 && j > 1 && 
+                        a[j - 1] === b[i - 2] && 
+                        a[j - 2] === b[i - 1]) {
                         matrix[i][j] = Math.min(
-                            matrix[i - 1][j - 1] + 1,
-                            matrix[i][j - 1] + 1,
-                            matrix[i - 1][j] + 1
+                            matrix[i][j],
+                            matrix[i - 2][j - 2] + cost
                         );
                     }
                 }
             }
-
+            
             return matrix[bn][an];
         }
 
-        // Calculate similarity percentage using Levenshtein
+        // Update the similarity function to use Damerau-Levenshtein
         function levenshteinSimilarity(s1, s2) {
             s1 = s1.toLowerCase();
             s2 = s2.toLowerCase();
             
-            const distance = levenshtein(s1, s2);
+            const distance = damerauLevenshtein(s1, s2);
             const maxLen = Math.max(s1.length, s2.length);
             
             if (maxLen === 0) return 1.0;
@@ -479,7 +483,8 @@
                 .attr("class", "node")
                 .attr("r", d => Math.max(8, 8 + d.connections * 2))
                 .attr("fill", d => {
-                    if (showSoundex && selectedNode && d.soundex === selectedNode.soundex) {
+                    if (showSoundex && selectedNode && selectedNode.soundexGroup && 
+                        selectedNode.soundexGroup.includes(d.name)) {
                         return "#a855f7";
                     }
                     if (d.connections === 0) return "#4ecdc4";
@@ -493,9 +498,19 @@
                 .on("mouseover", showTooltip)
                 .on("mouseout", hideTooltip)
                 .on("click", (event, d) => {
-                    selectedNode = d;
-                    updateGraph();
-                });
+                // Find soundex group for this node
+                if (graphData.soundex_groups) {
+                    for (const [code, names] of Object.entries(graphData.soundex_groups)) {
+                        if (names.includes(d.name)) {
+                            selectedNode = { soundexGroup: names };
+                            updateGraph();
+                            return;
+                        }
+                    }
+                }
+                selectedNode = null;
+                updateGraph();
+            });
             
             // Add labels
             const labels = g.append("g")
@@ -547,30 +562,44 @@
         
         function showTooltip(event, d) {
             const threshold = document.getElementById("threshold").value / 100;
+            
             const duplicates = graphData.nodes
-                .filter(n => n.name !== d.name && levenshteinSimilarity(d.name, n.name) >= threshold)
-                .map(n => `${n.name} (${(levenshteinSimilarity(d.name, n.name) * 100).toFixed(0)}%)`)
+                .filter(n => n.id !== d.recordId && levenshteinSimilarity(d.name, n.name) >= threshold)
+                .map(n => `${n.name} (ID: ${n.id}) ${(levenshteinSimilarity(d.name, n.name) * 100).toFixed(0)}%`)
                 .join('<br>');
             
-            const sameSoundex = graphData.nodes
-                .filter(n => n.name !== d.name && n.soundex === d.soundex)
-                .map(n => n.name)
-                .join(', ');
+            // Find which soundex group this name belongs to
+            let sameSoundex = '';
+            let soundexCode = 'N/A';
+            
+            if (graphData && graphData.soundex_groups) {
+                for (const [code, names] of Object.entries(graphData.soundex_groups)) {
+                    if (names.includes(d.name)) {
+                        soundexCode = code;
+                        // Filter by record ID, not just name
+                        const otherNodes = graphData.nodes.filter(n => 
+                            n.id !== d.recordId && names.includes(n.name)
+                        );
+                        sameSoundex = otherNodes.map(n => `${n.name} (ID: ${n.id})`).join(', ');
+                        break;
+                    }
+                }
+            }
             
             const tooltip = document.getElementById("tooltip");
             tooltip.innerHTML = `
                 <strong>${d.name}</strong><br>
                 <small>ID: ${d.recordId} | Expected: ${d.expected}</small><br>
-                <small>Soundex: ${d.soundex}</small><br>
+                <small>Soundex: ${soundexCode}</small><br>
                 Levenshtein Connections: ${d.connections}<br>
-                ${sameSoundex ? '<br><strong>Same Soundex:</strong><br>' + sameSoundex + '<br>' : ''}
+                ${sameSoundex ? '<br><strong>Same Soundex Group:</strong><br>' + sameSoundex + '<br>' : ''}
                 ${duplicates ? '<br><strong>Similar (Levenshtein ≥' + (threshold*100).toFixed(0) + '%):</strong><br>' + duplicates : '<br>No Levenshtein matches at current threshold'}
             `;
             tooltip.style.display = 'block';
             tooltip.style.left = (event.pageX + 10) + 'px';
             tooltip.style.top = (event.pageY - 10) + 'px';
         }
-        
+                        
         function hideTooltip() {
             document.getElementById("tooltip").style.display = 'none';
         }
@@ -644,7 +673,7 @@
         document.getElementById("showSoundex").addEventListener("change", updateGraph);
         
         // Load sample data on start
-        loadSampleData();
+        // loadSampleData();
     </script>
 </body>
 </html>

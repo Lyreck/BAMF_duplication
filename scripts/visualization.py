@@ -13,16 +13,17 @@ def export_for_visualization(result, output_file='graph_data.json'):
     # Prepare nodes - include all duplicates and some isolated
     nodes = []
     
+    id=1
     for item in result['all_duplicates']: ## TO CHANGE WITH REAL DATA
 
         nodes.append({
             'name': item, # item['name'],
             'expected': None, # item['expected'],
-            'id': None, # item['id'],
+            'id': id, # item['id'],
             'soundex': None, # item['soundex'],
             'has_duplicates': True
         })
-    
+        id += 1
     
     # Create Soundex group information
     soundex_info = {}
