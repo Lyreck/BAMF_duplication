@@ -166,6 +166,21 @@
             margin-top: 10px;
             font-size: 13px;
         }
+
+        /*for search of nodes */
+        .node.highlighted {
+            stroke: #00ff00 !important;
+            stroke-width: 4px !important;
+        }
+
+        .node.dimmed {
+            opacity: 0.3;
+        }
+
+        .link.dimmed {
+            opacity: 0.1;
+        }
+
     </style>
 </head>
 <body>
@@ -195,6 +210,12 @@
             <span style="margin-left: 10px; font-size: 12px; color: #aaa;">
                 (Highlight names with same Soundex code)
             </span>
+        </div>
+
+        <div class="control-group">
+            <label>Search Name:</label>
+            <input type="text" id="searchInput" placeholder="Type to search..." style="width: 250px;">
+            <button onclick="clearSearch()">Clear</button>
         </div>
         
         <div class="legend">
@@ -310,6 +331,63 @@
             .force("charge", d3.forceManyBody().strength(-300))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force("collision", d3.forceCollide().radius(30));
+
+
+        // Search functionality    
+        let searchResults = [];
+
+        function searchNames() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
+            
+            if (!graphData || !searchTerm) {
+                clearSearch();
+                return;
+            }
+            
+            searchResults = graphData.nodes
+                .map((n, i) => ({...n, index: i}))
+                .filter(n => n.name.toLowerCase().includes(searchTerm));
+            
+            highlightSearchResults();
+        }
+
+        function highlightSearchResults() {
+            g.selectAll("circle")
+                .classed("highlighted", d => searchResults.some(r => r.index === d.id))
+                .classed("dimmed", d => searchResults.length > 0 && !searchResults.some(r => r.index === d.id));
+            
+            g.selectAll("line")
+                .classed("dimmed", d => {
+                    if (searchResults.length === 0) return false;
+                    const sourceId = typeof d.source === 'object' ? d.source.id : d.source;
+                    const targetId = typeof d.target === 'object' ? d.target.id : d.target;
+                    return !searchResults.some(r => r.index === sourceId || r.index === targetId);
+                });
+            
+            g.selectAll("text")
+                .style("opacity", d => {
+                    if (searchResults.length === 0) return 1;
+                    return searchResults.some(r => r.index === d.id) ? 1 : 0.3;
+                });
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = '';
+            searchResults = [];
+            
+            g.selectAll("circle")
+                .classed("highlighted", false)
+                .classed("dimmed", false);
+            
+            g.selectAll("line")
+                .classed("dimmed", false);
+            
+            g.selectAll("text")
+                .style("opacity", 1);
+        }
+
+        // Add event listener for search input (add this near the other event listeners)
+        document.getElementById("searchInput").addEventListener("input", searchNames);
         
         function updateGraph() {
             if (!graphData) return;
