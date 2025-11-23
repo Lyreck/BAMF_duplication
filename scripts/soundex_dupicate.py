@@ -20,7 +20,7 @@ def load_transliterated_names():
 def create_soundex_groups(names, surnames):
     soundex_groups={}
     for name,surname in zip(names,surnames):
-        print(name,surname)
+        # print(name,surname)
         code = soundex(name) + soundex(surname)
         if code not in soundex_groups:
             soundex_groups[code] = [name+ " " + surname] # add name to the group
