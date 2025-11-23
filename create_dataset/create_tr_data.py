@@ -2,6 +2,7 @@ from names_translator import Transliterator
 import cyrtranslit as ctlt 
 from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish
 from translit_llm import run_llm
+# import icu
 import polars as pl 
 # Dataset structure : 
 # language, name, surname
@@ -57,8 +58,7 @@ def add_transliterations(df: pl.DataFrame, name_col="name", surn_col="surname"):
         pl.col(surn_col).map_elements(llm_fn).alias(f"{surn_col}_llm"),
     ])
 
-def add_transliterations_icu(df: pl.DataFrame, name_col="name", surn_col="surname"): #separate function bcz icu not on same computer.
-    import icu
+def add_transliterations_icu(df: pl.DataFrame, name_col="name", surn_col="surname"): #separate function bcz icu not on same computer
     
     return df.with_columns([
         pl.col(name_col).map_elements(icu_fn).alias(f"{name_col}_icu"),
@@ -70,6 +70,7 @@ if __name__ == "__main__":
     df = pl.read_csv("create_dataset/UA_paired.csv", encoding="utf8")
 
     df_out = add_transliterations(df)
-    df_out.write_csv('UA_tranliterated.csv')
+    # df_out = add_transliterations_icu(df) #for machine with icu installed
+    df_out.write_csv('UA_transliterated.csv')
 
     print(df_out)

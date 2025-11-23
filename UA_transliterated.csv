@@ -1,0 +1,156 @@
+gender,language,name,surname,name_icu,surname_icu,name_cy,surname_cy,name_kmu,surname_kmu,name_de,surname_de,name_br,surname_br,name_llm,surname_llm
+female,uk,Меланія,Тараненко,Melania,Taranenko,Melanija,Taranenko,Melaniia,Taranenko,Melanija,Taranenko,Melaniya,Taranenko,Melaniia,Taranenko
+female,uk,Меланка, Таранюк,Melanka, Taranuk,Melanka, Taranjuk,Melanka, Taraniuk,Melanka, Taranjuk,Melanka, Taranyuk,Melanka,Taraniuk
+female,uk,Маланка, Таран,Malanka, Taran,Malanka, Taran,Malanka, Taran,Malanka, Taran,Malanka, Taran,Malanka,Tarana
+female,uk,Мелашка, Таранов,Melaska, Taranov,Melaška, Taranov,Melashka, Taranov,Melaschka, Taranow,Melashka, Taranov,Melashka,TaranoV
+female,uk,Малашка, Тараник,Malaska, Taranik,Malaška, Taranyk,Malashka, Taranyk,Malaschka, Taranyk,Malashka, Taranȳk,Malashka,Taranik
+female,uk,Мелана, Таранишин,Melana, Taranisin,Melana, Taranyšyn,Melana, Taranyshyn,Melana, Taranyschyn,Melana, Taranȳshȳn,Melana,Taranyshyn
+female,uk,Малана, Таранець,Malana, Taranec',Malana, Taranec',Malana, Taranets,Malana, Taranez,Malana, Taranets,Malana,Taranets
+male,uk,Димитрій,Млинар,Dimitrij,Mlinar,Dymytrij,Mlynar,Dymytrii,Mlynar,Dymytrij,Mlynar,Dȳmȳtriĭ,Mlȳnar,Dymytrii,Mlynar
+male,uk,Дмитро, Млинарчук,Dmitro, Mlinarcuk,Dmytro, Mlynarčuk,Dmytro, Mlynarchuk,Dmytro, Mlynartschuk,Dmȳtro, Mlȳnarchuk,Dmytro,Mlynarchuk
+female,uk,Валерія,Томко,Valeria,Tomko,Valerija,Tomko,Valeriia,Tomko,Walerija,Tomko,Valeriya,Tomko,Valeriia,Tomko
+female,uk,Лера, Томенко,Lera, Tomenko,Lera, Tomenko,Lera, Tomenko,Lera, Tomenko,Lera, Tomenko,Lera,Tomenko
+female,uk,Лєра, Томченко,Lera, Tomcenko,Ljera, Tomčenko,Liera, Tomchenko,Ljera, Tomtschenko,Lyera, Tomchenko,Lera,Tomchenko
+female,uk,Леруня, Томишин,Leruna, Tomisin,Lerunja, Tomyšyn,Lerunia, Tomyshyn,Lerunja, Tomyschyn,Lerunya, Tomȳshȳn,Lerunya,Tomyshyn
+female,uk,Леруся, Томчишин,Lerusa, Tomcisin,Lerusja, Tomčyšyn,Lerusia, Tomchyshyn,Lerusja, Tomtschyschyn,Lerusya, Tomchȳshȳn,Lerusia,Tomchyshyn
+female,uk,Леруша, Томин,Lerusa, Tomin,Leruša, Tomyn,Lerusha, Tomyn,Leruscha, Tomyn,Lerusha, Tomȳn,Lerusha,Tomyn
+female,uk,Лерочка, Томич,Lerocka, Tomic,Leročka, Tomyč,Lerochka, Tomych,Lerotschka, Tomytsch,Lerochka, Tomȳch,Lerochka,Tomych
+female,uk,Дарія,Хоменко,Daria,Homenko,Darija,Xomenko,Dariia,Khomenko,Darija,Chomenko,Dariya,Khomenko,Daria,Homenko
+female,uk,Одарка, Хомченко,Odarka, Homcenko,Odarka, Xomčenko,Odarka, Khomchenko,Odarka, Chomtschenko,Odarka, Khomchenko,Odarka,Khomchenko
+female,uk,Дарина, Хомчак,Darina, Homcak,Daryna, Xomčak,Daryna, Khomchak,Daryna, Chomtschak,Darȳna, Khomchak,Daryna,Khomchak
+female,uk,Дарка, Хома,Darka, Homa,Darka, Xoma,Darka, Khoma,Darka, Choma,Darka, Khoma,Darka,Khoma
+female,uk,Дарья, Хомич,Dar'a, Homic,Dar'ja, Xomyč,Daria, Khomych,Darja, Chomytsch,Darya, Khomȳch,Daria,Khomych
+female,uk,Дар'я, Хомець,Dar'a, Homec',Dar'ja, Xomec',Daria, Khomets,Darja, Chomez,Darya, Khomets,Daria,Komet﻿'
+male,uk,Авраам,Портний,Avraam,Portnij,Avraam,Portnyj,Avraam,Portnyi,Awraam,Portnyj,Avraam,Portnȳĭ,Avraam,Portnyi
+male,uk,Авраамій, Портнюк,Avraamij, Portnuk,Avraamij, Portnjuk,Avraamii, Portniuk,Awraamij, Portnjuk,Avraamiĭ, Portnyuk,Avraamiy,Portniuk
+male,uk,Аврамій, Портненко,Avramij, Portnenko,Avramij, Portnenko,Avramii, Portnenko,Awramij, Portnenko,Avramiĭ, Portnenko,Avramiy,Portnenko
+male,uk,Григорій,Романенко,Grigorij,Romanenko,Hryhorij,Romanenko,Hryhorii,Romanenko,Hryhorij,Romanenko,Hrȳhoriĭ,Romanenko,Hryhorii,Romanenko
+male,uk,Гриць, Ромасенко,Gric', Romasenko,Hryc', Romasenko,Hryts, Romasenko,Hryz, Romasenko,Hrȳts, Romasenko,Hryts,Romasenko
+male,uk,Григір, Ромашенко,Grigir, Romasenko,Hryhir, Romašenko,Hryhir, Romashenko,Hryhir, Romaschenko,Hrȳhir, Romashenko,Hryhor,Romashenko
+male,uk,Григор, Ромащенко,Grigor, Romasenko,Hryhor, Romaščenko,Hryhor, Romashchenko,Hryhor, Romaschtschenko,Hrȳhor, Romashchenko,Hryhor,Romashchenko
+male,uk,Грись, Романченко,Gris', Romancenko,Hrys', Romančenko,Hrys, Romanchenko,Hrys, Romantschenko,Hrȳs, Romanchenko,Hrys,Romanchukhena
+female,uk,Аделаїда,Коваль,Adelaida,Koval',Adelajida,Koval',Adelaida,Koval,Adelajida,Kowal,Adelayida,Koval,Adelaida,Koval
+female,uk,Аделіна, Коваленко,Adelina, Kovalenko,Adelina, Kovalenko,Adelina, Kovalenko,Adelina, Kowalenko,Adelina, Kovalenko,Adelina,Kovalenko
+female,uk,Аделя, Ковалюк,Adela, Kovaluk,Adelja, Kovaljuk,Adelia, Kovaliuk,Adelja, Kowaljuk,Adelya, Kovalyuk,Adela,Kovalyuk
+female,uk,Адиля, Ковальчук,Adila, Koval'cuk,Adylja, Koval'čuk,Adylia, Kovalchuk,Adylja, Kowaltschuk,Adȳlya, Kovalchuk,Adilya,Kovalchuk
+female,uk,Адель, Ковалик,Adel', Kovalik,Adel', Kovalyk,Adel, Kovalyk,Adel, Kowalyk,Adel, Kovalȳk,Adel,Kovalyk
+male,uk,Валент,Залізняк,Valent,Zaliznak,Valent,Zaliznjak,Valent,Zalizniak,Walent,Salisnjak,Valent,Zaliznyak,Valent,Zalizniak
+male,uk,Уалент, Залізнюк,Ualent, Zaliznuk,Ualent, Zaliznjuk,Ualent, Zalizniuk,Ualent, Salisnjuk,Ualent, Zaliznyuk,Valent,Zalizniuk
+male,uk,Микола,Матюш,Mikola,Matus,Mykola,Matjuš,Mykola,Matiush,Mykola,Matjusch,Mȳkola,Matyush,Mykola,Matyush
+male,uk,Миколай, Матяш,Mikolaj, Matas,Mykolaj, Matjaš,Mykolai, Matiash,Mykolaj, Matjasch,Mȳkolaĭ, Matyash,Mykolai,Matiash
+male,uk,Микула, Матюха,Mikula, Matuha,Mykula, Matjuxa,Mykula, Matiukha,Mykula, Matjucha,Mȳkula, Matyukha,Mikula,Matyukha
+male,uk,Коля, Матюшенко,Kola, Matusenko,Kolja, Matjušenko,Kolia, Matiushenko,Kolja, Matjuschenko,Kolya, Matyushenko,Kolia,Matyushenko
+male,uk,Гавриїл,Плахотник,Gavriil,Plahotnik,Havryjil,Plaxotnyk,Havryil,Plakhotnyk,Hawryjil,Plachotnyk,Havrȳyil,Plakhotnȳk,Havryil,Plakhotnyk
+male,uk,Гаврило, Плахотнюк,Gavrilo, Plahotnuk,Havrylo, Plaxotnjuk,Havrylo, Plakhotniuk,Hawrylo, Plachotnjuk,Havrȳlo, Plakhotnyuk,Havrylo,Plakhotniuk
+female,uk,Ореста,Попенко,Oresta,Popenko,Oresta,Popenko,Oresta,Popenko,Oresta,Popenko,Oresta,Popenko,Oresta,Popenko
+female,uk,Агнеса,Приходько,Agnesa,Prihod'ko,Ahnesa,Pryxod'ko,Ahnesa,Prykhodko,Ahnesa,Prychodko,Ahnesa,Prȳkhodko,Ahnesa,Prikhodko
+female,uk,Агнія, Приходченко,Agnia, Prihodcenko,Ahnija, Pryxodčenko,Ahniia, Prykhodchenko,Ahnija, Prychodtschenko,Ahniya, Prȳkhodchenko,Aniia,Prihodchenko
+female,uk,Агна, Приходюк,Agna, Prihoduk,Ahna, Pryxodjuk,Ahna, Prykhodiuk,Ahna, Prychodjuk,Ahna, Prȳkhodyuk,Ahnia,Prikhodiuk
+female,uk,Августа,Матеєнко,Avgusta,Mateenko,Avhusta,Matejenko,Avhusta,Mateienko,Awhusta,Matejenko,Avhusta,Mateyenko,Avhusta,Mateyenko
+female,uk,Густа, Матейчук,Gusta, Matejcuk,Husta, Matejčuk,Husta, Mateichuk,Husta, Matejtschuk,Husta, Mateĭchuk,Gusta,Mateichuk
+male,uk,Никифор,Муха,Nikifor,Muha,Nykyfor,Muxa,Nykyfor,Mukha,Nykyfor,Mucha,Nȳkȳfor,Mukha,Nikifor,Mukha
+male,uk,Ничипір, Мушенко,Nicipir, Musenko,Nyčypir, Mušenko,Nychypir, Mushenko,Nytschypir, Muschenko,Nȳchȳpir, Mushenko,Nychypir,Mushenko
+male,uk,Нечипір, Мущенко,Necipir, Musenko,Nečypir, Muščenko,Nechypir, Mushchenko,Netschypir, Muschtschenko,Nechȳpir, Mushchenko,Nechypir,Mushchenko
+male,uk,Никифір, Мущук,Nikifir, Musuk,Nykyfir, Muščuk,Nykyfir, Mushchuk,Nykyfir, Muschtschuk,Nȳkȳfir, Mushchuk,Nikifir,Mushchuk
+female,uk,Сусанна,Колісник,Susanna,Kolisnik,Susanna,Kolisnyk,Susanna,Kolisnyk,Susanna,Kolisnyk,Susanna,Kolisnȳk,Sussanna,Kolysnyk
+female,uk,Сусана, Колісниченко,Susana, Kolisnicenko,Susana, Kolisnyčenko,Susana, Kolisnychenko,Susana, Kolisnytschenko,Susana, Kolisnȳchenko,Susana,Kolysnychenko
+female,uk,Сосанна, Колісничук,Sosanna, Kolisnicuk,Sosanna, Kolisnyčuk,Sosanna, Kolisnychuk,Sosanna, Kolisnytschuk,Sosanna, Kolisnȳchuk,Sosanna,Kolisnychuk
+female,uk,Зузана, Колесник,Zuzana, Kolesnik,Zuzana, Kolesnyk,Zuzana, Kolesnyk,Susana, Kolesnyk,Zuzana, Kolesnȳk,Zuzana,Kolesnyk
+female,uk,Сюзанна, Колесниченко,Suzanna, Kolesnicenko,Sjuzanna, Kolesnyčenko,Siuzanna, Kolesnychenko,Sjusanna, Kolesnytschenko,Syuzanna, Kolesnȳchenko,Suzanna,Kolesnychenko
+female,uk,Агафія,Романів,Agafia,Romaniv,Ahafija,Romaniv,Ahafiia,Romaniv,Ahafija,Romaniw,Ahafiya,Romaniv,Ahatia,Romaniv
+female,uk,Агапія, Романов,Agapia, Romanov,Ahapija, Romanov,Ahapiia, Romanov,Ahapija, Romanow,Ahapiya, Romanov,Agafiia,Romanov
+female,uk,Гафія, Романій,Gafia, Romanij,Hafija, Romanij,Hafiia, Romanii,Hafija, Romanij,Hafiya, Romaniĭ,Gafia,Romanii
+female,uk,Гапка, Романіва,Gapka, Romaniva,Hapka, Romaniva,Hapka, Romaniva,Hapka, Romaniwa,Hapka, Romaniva,Hapka,Romaniva
+male,uk,Андріан,Мельник,Andrian,Mel'nik,Andrian,Mel'nyk,Andrian,Melnyk,Andrian,Melnyk,Andrian,Melnȳk,Andrian,Melnik
+male,uk,Андріян, Мельниченко,Andrian, Mel'nicenko,Andrijan, Mel'nyčenko,Andriian, Melnychenko,Andrijan, Melnytschenko,Andriyan, Melnȳchenko,Andriian,Melnychenko
+male,uk,Адріан, Мельничук,Adrian, Mel'nicuk,Adrian, Mel'nyčuk,Adrian, Melnychuk,Adrian, Melnytschuk,Adrian, Melnȳchuk,Adrian,Melnychuk
+male,uk,Адріан, Мельникович,Adrian, Mel'nikovic,Adrian, Mel'nykovyč,Adrian, Melnykovych,Adrian, Melnykowytsch,Adrian, Melnȳkovȳch,Adrian,Melnikovych
+female,uk,Ольга,Ґуля,Ol'ga,Gula,Ol'ha,Gulja,Olha,Gulia,Olha,Gulja,Olha,Gulya,Olha,Gulia
+female,uk,Хельга, Ґуленко,Hel'ga, Gulenko,Xel'ha, Gulenko,Khelha, Gulenko,Chelha, Gulenko,Khelha, Gulenko,Helha,Gulenko
+female,uk,Оля, Ґульченко,Ola, Gul'cenko,Olja, Gul'čenko,Olia, Gulchenko,Olja, Gultschenko,Olya, Gulchenko,Olia,Gulchenko
+female,uk,Леся, Ґульчук,Lesa, Gul'cuk,Lesja, Gul'čuk,Lesia, Gulchuk,Lesja, Gultschuk,Lesya, Gulchuk,Lesia,Gulchuk
+female,uk,Олеся, Ґульчак,Olesa, Gul'cak,Olesja, Gul'čak,Olesia, Gulchak,Olesja, Gultschak,Olesya, Gulchak,Olesya,Gulchak
+female,uk,Орина,Мацьо,Orina,Mac'o,Oryna,Mac'o,Oryna,Matso,Oryna,Mazo,Orȳna,Matso,Oryna,Matsio
+female,uk,Судислава,Тар,Sudislava,Tar,Sudyslava,Tar,Sudyslava,Tar,Sudyslawa,Tar,Sudȳslava,Tar,Sudyslava,Tar
+male,uk,Іоан,Чоботар,Ioan,Cobotar,Ioan,Čobotar,Ioan,Chobotar,Ioan,Tschobotar,Ioan,Chobotar,Ioan,Chobotar
+male,uk,Іван, Чоботарь,Ivan, Cobotar',Ivan, Čobotar',Ivan, Chobotar,Iwan, Tschobotar,Ivan, Chobotar,Ivan,Chobotar
+male,uk,Ваня, Чоботарьов,Vana, Cobotar'ov,Vanja, Čobotar'ov,Vania, Chobotarov,Wanja, Tschobotarow,Vanya, Chobotarov,Vanya,Chobotariov
+male,uk,Йоан, Чоботаренко,Joan, Cobotarenko,Joan, Čobotarenko,Yoan, Chobotarenko,Joan, Tschobotarenko,Ĭoan, Chobotarenko,Ioan,Chobotarenko
+female,uk,Тереза,Матвієнко,Tereza,Matvienko,Tereza,Matvijenko,Tereza,Matviienko,Teresa,Matwijenko,Tereza,Matviyenko,Tereza,Matviienko
+male,uk,Кирило,Фомко,Kirilo,Fomko,Kyrylo,Fomko,Kyrylo,Fomko,Kyrylo,Fomko,Kȳrȳlo,Fomko,Kyrylo,Fomko
+male,uk,Кирил, Фоменко,Kiril, Fomenko,Kyryl, Fomenko,Kyryl, Fomenko,Kyryl, Fomenko,Kȳrȳl, Fomenko,Kyril,Fomenko
+male,uk,Кіріл, Фомченко,Kiril, Fomcenko,Kiril, Fomčenko,Kiril, Fomchenko,Kiril, Fomtschenko,Kiril, Fomchenko,Kyril,Fomchenko
+male,uk,Киріл, Фомишин,Kiril, Fomisin,Kyril, Fomyšyn,Kyril, Fomyshyn,Kyril, Fomyschyn,Kȳril, Fomȳshȳn,Kyril,Fomyshyn
+male,uk,Цириль, Фомчук,Ciril', Fomcuk,Cyryl', Fomčuk,Tsyryl, Fomchuk,Zyryl, Fomtschuk,Tsȳrȳl, Fomchuk,Tsyril,Fomchuk
+female,uk,Трояна,Пелех,Troana,Peleh,Trojana,Pelex,Troiana,Pelekh,Trojana,Pelech,Troyana,Pelekh,Trojana,Pelekh
+female,uk,Анна,Тимчук,Anna,Timcuk,Anna,Tymčuk,Anna,Tymchuk,Anna,Tymtschuk,Anna,Tȳmchuk,Anna,Timchuk
+female,uk,Ганна, Тимочук,Ganna, Timocuk,Hanna, Tymočuk,Hanna, Tymochuk,Hanna, Tymotschuk,Hanna, Tȳmochuk,Hanna,Timochuk
+female,uk,Анничка, Тимощук,Annicka, Timosuk,Annyčka, Tymoščuk,Annychka, Tymoshchuk,Annytschka, Tymoschtschuk,Annȳchka, Tȳmoshchuk,Annychka,Timoshchuk
+female,uk,Анка, Тимків,Anka, Timkiv,Anka, Tymkiv,Anka, Tymkiv,Anka, Tymkiw,Anka, Tȳmkiv,Anka,Tymkiv
+female,uk,Аня, Тиміш,Ana, Timis,Anja, Tymiš,Ania, Tymish,Anja, Tymisch,Anya, Tȳmish,Ania,Timish
+male,uk,Юліан,Олійник,Ulian,Olijnik,Julian,Olijnyk,Yulian,Oliinyk,Julian,Olijnyk,Yulian,Oliĭnȳk,Iulian,Oliynyk
+male,uk,Юлій, Олійниченко,Ulij, Olijnicenko,Julij, Olijnyčenko,Yulii, Oliinychenko,Julij, Olijnytschenko,Yuliĭ, Oliĭnȳchenko,Iuliĭ,Oliynchenko
+male,uk,Юрій, Олійничук,Urij, Olijnicuk,Jurij, Olijnyčuk,Yurii, Oliinychuk,Jurij, Olijnytschuk,Yuriĭ, Oliĭnȳchuk,Yurii,Oliynychuk
+male,uk,Юлько, Оліяр,Ul'ko, Oliar,Jul'ko, Olijar,Yulko, Oliiar,Julko, Olijar,Yulko, Oliyar,Iulko,Oliiar
+male,uk,Юлянчик, Оліярчук,Ulancik, Oliarcuk,Juljančyk, Olijarčuk,Yulianchyk, Oliiarchuk,Juljantschyk, Olijartschuk,Yulyanchȳk, Oliyarchuk,Yuliantsik,Oliarchuk
+female,uk,Єва,Мокрий,Eva,Mokrij,Jeva,Mokryj,Yeva,Mokryi,Jewa,Mokryj,Yeva,Mokrȳĭ,Eva,Mokriy
+female,uk,Євгенія, Мокрій,Evgenia, Mokrij,Jevhenija, Mokrij,Yevheniia, Mokrii,Jewhenija, Mokrij,Yevheniya, Mokriĭ,Evheniia,Mokriy
+female,uk,Євгена, Мокренко,Evgena, Mokrenko,Jevhena, Mokrenko,Yevhena, Mokrenko,Jewhena, Mokrenko,Yevhena, Mokrenko,Yevgena,Mokrenko
+female,uk,Югина, Мокряк,Ugina, Mokrak,Juhyna, Mokrjak,Yuhyna, Mokriak,Juhyna, Mokrjak,Yuhȳna, Mokryak,Ievyna,Mokriak
+female,uk,Ївга, Мокрук,Ivga, Mokruk,Jivha, Mokruk,Yivha, Mokruk,Jiwha, Mokruk,Yivha, Mokruk,Ivga,Mokruk
+female,uk,Рогволода,Мартиш,Rogvoloda,Martis,Rohvoloda,Martyš,Rohvoloda,Martysh,Rohwoloda,Martysch,Rohvoloda,Martȳsh,Rohvoloda,Martysh
+female,uk,Пелагія,Швець,Pelagia,Svec',Pelahija,Švec',Pelahiia,Shvets,Pelahija,Schwez,Pelahiya,Shvets,Pelahiya,Shvets
+female,uk,Пелагея, Шевченко,Pelagea, Sevcenko,Pelaheja, Ševčenko,Pelaheia, Shevchenko,Pelaheja, Schewtschenko,Pelaheya, Shevchenko,Pelahiya,Shevchenko
+female,uk,Палагна, Шевчук,Palagna, Sevcuk,Palahna, Ševčuk,Palahna, Shevchuk,Palahna, Schewtschuk,Palahna, Shevchuk,Palahna,Shevchuk
+female,uk,Палазга, Шевчик,Palazga, Sevcik,Palazha, Ševčyk,Palazgha, Shevchyk,Palasha, Schewtschyk,Palazha, Shevchȳk,Palazha,Shevchyk
+female,uk,Палажка, Шевчишин,Palazka, Sevcisin,Palažka, Ševčyšyn,Palazhka, Shevchyshyn,Palashka, Schewtschyschyn,Palazhka, Shevchȳshȳn,Palazhka,Shevchyshyn
+female,uk,Пазина, Шевців,Pazina, Sevciv,Pazyna, Ševciv,Pazyna, Shevtsiv,Pasyna, Schewziw,Pazȳna, Shevtsiv,Pazyna,Shevtsiv
+female,uk,Єлизавета,Лисенко,Elizaveta,Lisenko,Jelyzaveta,Lysenko,Yelyzaveta,Lysenko,Jelysaweta,Lysenko,Yelȳzaveta,Lȳsenko,Yelizaveta,Lysenko
+female,uk,Лизавета, Лисиця,Lizaveta, Lisica,Lyzaveta, Lysycja,Lyzaveta, Lysytsia,Lysaweta, Lysyzja,Lȳzaveta, Lȳsȳtsya,Lyzaveta,Lysytsia
+female,uk,Лисавета, Лисюк,Lisaveta, Lisuk,Lysaveta, Lysjuk,Lysaveta, Lysiuk,Lysaweta, Lysjuk,Lȳsaveta, Lȳsyuk,Lysaveta,Lisyuk
+female,uk,Гальшка, Лисяк,Gal'ska, Lisak,Hal'ška, Lysjak,Halshka, Lysiak,Halschka, Lysjak,Halshka, Lȳsyak,Halška,Lisyak
+female,uk,Галшка, Лисняк,Galska, Lisnak,Halška, Lysnjak,Halshka, Lysniak,Halschka, Lysnjak,Halshka, Lȳsnyak,Halshka,Lisniak
+female,uk,Ліза, Лищик,Liza, Lisik,Liza, Lyščyk,Liza, Lyshchyk,Lisa, Lyschtschyk,Liza, Lȳshchȳk,Liza,Lyshchyk
+female,uk,Марія,Шваля,Maria,Svala,Marija,Švalja,Mariia,Shvalia,Marija,Schwalja,Mariya,Shvalya,Mariia,Shvalia
+female,uk,Марічка, Швач,Maricka, Svac,Marička, Švač,Marichka, Shvach,Maritschka, Schwatsch,Marichka, Shvach,Marička,Shvach
+female,uk,Марійка, Шваченко,Marijka, Svacenko,Marijka, Švačenko,Mariika, Shvachenko,Marijka, Schwatschenko,Mariĭka, Shvachenko,Mariika,Shvachenko
+female,uk,Маруся, Швачка,Marusa, Svacka,Marusja, Švačka,Marusia, Shvachka,Marusja, Schwatschka,Marusya, Shvachka,Marusia,Shvachka
+female,uk,Марися, Швачук,Marisa, Svacuk,Marysja, Švačuk,Marysia, Shvachuk,Marysja, Schwatschuk,Marȳsya, Shvachuk,Marisiia,Shvachuk
+female,uk,Марічка, Швадюк,Maricka, Svaduk,Marička, Švadjuk,Marichka, Shvadiuk,Maritschka, Schwadjuk,Marichka, Shvadyuk,Marička,Shvadiuk
+female,uk,Марина, Швадченко,Marina, Svadcenko,Maryna, Švadčenko,Maryna, Shvadchenko,Maryna, Schwadtschenko,Marȳna, Shvadchenko,Marina,Shvadchenko
+female,uk,Мстислава,Тарасенко,Mstislava,Tarasenko,Mstyslava,Tarasenko,Mstyslava,Tarasenko,Mstyslawa,Tarasenko,Mstȳslava,Tarasenko,Mstyslava,Tarasenko
+female,uk,Агата,Романюк,Agata,Romanuk,Ahata,Romanjuk,Ahata,Romaniuk,Ahata,Romanjuk,Ahata,Romanyuk,Agata,Romaniuk
+female,uk,Аґата, Романчук,Agata, Romancuk,Agata, Romančuk,Agata, Romanchuk,Agata, Romantschuk,Agata, Romanchuk,Agata,Romanchuk
+female,uk,Тіна,Пономаренко,Tina,Ponomarenko,Tina,Ponomarenko,Tina,Ponomarenko,Tina,Ponomarenko,Tina,Ponomarenko,Tina,Ponomarenko
+female,uk,Анастасія,Бондар,Anastasia,Bondar,Anastasija,Bondar,Anastasiia,Bondar,Anastasija,Bondar,Anastasiya,Bondar,Anastasiya,Bondar
+female,uk,Настасія, Бондаренко,Nastasia, Bondarenko,Nastasija, Bondarenko,Nastasiia, Bondarenko,Nastasija, Bondarenko,Nastasiya, Bondarenko,Nastasija,Bondarenko
+female,uk,Настя, Бондарчук,Nasta, Bondarcuk,Nastja, Bondarčuk,Nastia, Bondarchuk,Nastja, Bondartschuk,Nastya, Bondarchuk,Nastia,Bondarchuk
+female,uk,Наста, Бондарець,Nasta, Bondarec',Nasta, Bondarec',Nasta, Bondarets,Nasta, Bondarez,Nasta, Bondarets,Nasta,Bondarets
+female,uk,Настка, Боднар,Nastka, Bodnar,Nastka, Bodnar,Nastka, Bodnar,Nastka, Bodnar,Nastka, Bodnar,Nastka,Bodnar
+male,uk,Алфей,Мурашка,Alfej,Muraska,Alfej,Muraška,Alfei,Murashka,Alfej,Muraschka,Alfeĭ,Murashka,Alfei,Murashka
+male,uk,Алфій, Мурашко,Alfij, Murasko,Alfij, Muraško,Alfii, Murashko,Alfij, Muraschko,Alfiĭ, Murashko,Alfiy,Murashko
+female,uk,Артемізія,Скринник,Artemizia,Skrinnik,Artemizija,Skrynnyk,Artemiziia,Skrynnyk,Artemisija,Skrynnyk,Artemiziya,Skrȳnnȳk,Artemiziya,Skrynnyk
+female,uk,Артемісія, Скриннік,Artemisia, Skrinnik,Artemisija, Skrynnik,Artemisiia, Skrynnik,Artemisija, Skrynnik,Artemisiya, Skrȳnnik,Artemisia,Skrynnik
+female,uk,Артеміса, Скринниченко,Artemisa, Skrinnicenko,Artemisa, Skrynnyčenko,Artemisa, Skrynnychenko,Artemisa, Skrynnytschenko,Artemisa, Skrȳnnȳchenko,Artemisa,Skrynnychenko
+female,uk,Артеміза, Скринніченко,Artemiza, Skrinnicenko,Artemiza, Skrynničenko,Artemiza, Skrynnichenko,Artemisa, Skrynnitschenko,Artemiza, Skrȳnnichenko,Artemiza,Skrynnichenko
+female,uk,Артемія, Скринничук,Artemia, Skrinnicuk,Artemija, Skrynnyčuk,Artemiia, Skrynnychuk,Artemija, Skrynnytschuk,Artemiya, Skrȳnnȳchuk,Artemiia,Skrynnichuk
+female,uk,Настасія,Кравець,Nastasia,Kravec',Nastasija,Kravec',Nastasiia,Kravets,Nastasija,Krawez,Nastasiya,Kravets,Nastasija,Kravets
+female,uk,Анастасія, Кравченко,Anastasia, Kravcenko,Anastasija, Kravčenko,Anastasiia, Kravchenko,Anastasija, Krawtschenko,Anastasiya, Kravchenko,Anastasiya,Kravchenko
+female,uk,Наста, Кравчук,Nasta, Kravcuk,Nasta, Kravčuk,Nasta, Kravchuk,Nasta, Krawtschuk,Nasta, Kravchuk,Nasta,Kravchuk
+female,uk,Настя, Кравчишин,Nasta, Kravcisin,Nastja, Kravčyšyn,Nastia, Kravchyshyn,Nastja, Krawtschyschyn,Nastya, Kravchȳshȳn,Nastia,Kravchyshyn
+female,uk,Настка, Кравецький,Nastka, Kravec'kij,Nastka, Kravec'kyj,Nastka, Kravetskyi,Nastka, Krawezkyj,Nastka, Kravetskȳĭ,Nastka,Kravetsʹkyi
+female,uk,Ната, Кравців,Nata, Kravciv,Nata, Kravciv,Nata, Kravtsiv,Nata, Krawziw,Nata, Kravtsiv,Nata,Kravtsiv
+female,uk,Нася, Кравцов,Nasa, Kravcov,Nasja, Kravcov,Nasia, Kravtsov,Nasja, Krawzow,Nasya, Kravtsov,Nasya,Kravtsov
+female,uk,Анастасья, Кравчина,Anastas'a, Kravcina,Anastas'ja, Kravčyna,Anastasia, Kravchyna,Anastasja, Krawtschyna,Anastasya, Kravchȳna,Anastasija,Kravchyna
+female,uk,Аврелія,Панкратенко,Avrelia,Pankratenko,Avrelija,Pankratenko,Avreliia,Pankratenko,Awrelija,Pankratenko,Avreliya,Pankratenko,Aureliia,Pankratenko
+female,uk,Аурелія, Панко,Aurelia, Panko,Aurelija, Panko,Aureliia, Panko,Aurelija, Panko,Aureliya, Panko,Aureliia,Panko
+female,uk,Аурика, Паненко,Aurika, Panenko,Auryka, Panenko,Auryka, Panenko,Auryka, Panenko,Aurȳka, Panenko,Aurika,Panenko
+male,uk,Лев,Тимофієнко,Lev,Timofienko,Lev,Tymofijenko,Lev,Tymofiienko,Lew,Tymofijenko,Lev,Tȳmofiyenko,Lev,Timofienko
+male,uk,Левко, Тимошенко,Levko, Timosenko,Levko, Tymošenko,Levko, Tymoshenko,Lewko, Tymoschenko,Levko, Tȳmoshenko,Levko,Timoshenko
+male,uk,Левусь, Тимощенко,Levus', Timosenko,Levus', Tymoščenko,Levus, Tymoshchenko,Lewus, Tymoschtschenko,Levus, Tȳmoshchenko,Levus,Timoshchenko
+male,uk,Левцьо, Тимченко,Levc'o, Timcenko,Levc'o, Tymčenko,Levtso, Tymchenko,Lewzo, Tymtschenko,Levtso, Tȳmchenko,Levtsio,Tymchenko
+male,uk,Левчик, Тимофійчук ,Levcik, Timofijcuk ,Levčyk, Tymofijčuk ,Levchyk, Tymofiichuk ,Lewtschyk, Tymofijtschuk ,Levchȳk, Tȳmofiĭchuk ,Levchyk,Timofiiychuk
+female,uk,Акилина,Сухенко,Akilina,Suhenko,Akylyna,Suxenko,Akylyna,Sukhenko,Akylyna,Suchenko,Akȳlȳna,Sukhenko,Akylina,Sukhenko
+female,uk,Килина, Суханюк,Kilina, Suhanuk,Kylyna, Suxanjuk,Kylyna, Sukhaniuk,Kylyna, Suchanjuk,Kȳlȳna, Sukhanyuk,Kylina,Sukhaniuk
+female,uk,Кулина, Сухенюк,Kulina, Suhenuk,Kulyna, Suxenjuk,Kulyna, Sukheniuk,Kulyna, Suchenjuk,Kulȳna, Sukhenyuk,Kulina,Sukheniuk
+female,uk,Якилина, Сушко,Akilina, Susko,Jakylyna, Suško,Yakylyna, Sushko,Jakylyna, Suschko,Yakȳlȳna, Sushko,Yakylina,Sushko
