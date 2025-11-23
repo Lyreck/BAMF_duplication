@@ -1,5 +1,5 @@
 import polars as pl
-from scripts import graph_data_new, export_for_visualization
+from scripts import graph_data, export_for_visualization
 def main():
     print("Hello from reverse-engineering!")
 
@@ -26,16 +26,34 @@ def main():
 
     UA_transliterated.write_csv('data/UA_transliterated.csv')
 
-    ## Compute soundex groups
+    ## Compute soundex groups and json file
 
-    data_icu = graph_data_new(UA_transliterated, col_name="name_icu", col_surname="surname_icu")
-    data_llm = graph_data_new(UA_transliterated, col_name="name_llm", col_surname="surname_llm")
+    # Ukrainian
+    data_icu_UA = graph_data(UA_transliterated, col_name="name_icu", col_surname="surname_icu")
+    data_llm_UA = graph_data(UA_transliterated, col_name="name_llm", col_surname="surname_llm")
+    data_kmu_UA = graph_data(UA_transliterated, col_name="name_kmu", col_surname="surname_kmu")
+
+
+    ## compute statistics
+    n_names = data_icu_UA['stats']['total_records']
+    n_groups = data_icu_UA['stats']['n_soundex_groups']
+    n_soundex_merged = data_icu_UA['stats']['n_soundex_merges']
+
+    print(f"\nSoundex stats:")
+    print(f"  Number of names in dataset: {n_names}")
+    print(f"  Number of clusters detected with Soundex: {n_groups}")
+    print(f"  Duplicates detected with Soundex: {n_soundex_merged}")
+    print(f"Percentage of duplicates found = {n_soundex_merged/n_names*100:.2f} %")
+
+    
 
     ## Prepare data for graph visualization
 
     # viz_data = export_for_visualization(data, output_file='graph_data.json')
-    viz_data_icu = export_for_visualization(data_icu, output_file='json_viz/graph_data_icu.json')
-    viz_data_llm = export_for_visualization(data_llm, output_file='json_viz/graph_data_llm.json')
+    # viz_data_icu_UA = export_for_visualization(data_icu_UA, output_file='json_viz/graph_data_icu_UA.json')
+    # viz_data_llm_UA = export_for_visualization(data_llm_UA, output_file='json_viz/graph_data_llm_UA.json')
+    # viz_data_llm_kmu = export_for_visualization(data_kmu_UA, output_file='json_viz/graph_data_kmu_UA.json')
+
 
     ## Visualize results with Levenshtein
 

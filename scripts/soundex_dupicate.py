@@ -1,4 +1,5 @@
 from phonetics import soundex
+import json
 
 
 def are_similar(text1:str, text2:str) -> bool:
@@ -20,7 +21,6 @@ def load_transliterated_names():
 def create_soundex_groups(names, surnames):
     soundex_groups={}
     for name,surname in zip(names,surnames):
-        # print(name,surname)
         code = soundex(name) + soundex(surname)
         if code not in soundex_groups:
             soundex_groups[code] = [name+ " " + surname] # add name to the group
@@ -28,14 +28,14 @@ def create_soundex_groups(names, surnames):
 
     return soundex_groups
 
-def compute_nb_duplicated(soundex_groups):
+def compute_nb_duplicates(soundex_groups):
     nb_duplicates=0
     for v in soundex_groups.values(): 
         nb = len(v)
         if nb>1: nb_duplicates+=nb
     return nb_duplicates
 
-def graph_data_new(dataset, col_name="name", col_surname="surname"):
+def graph_data(dataset, col_name="name", col_surname="surname", official_name="name_kmu", official_surname="surname_kmu", output_file='json_viz/graph_data2.json'):
     """take the csv and output data for graph visualization"""
 
     names = dataset[col_name].to_list()
@@ -55,74 +55,36 @@ def graph_data_new(dataset, col_name="name", col_surname="surname"):
         data_all_names.append({
             'Original name': p["name"] + " " + p["surname"],
             'Transliterated name': p[col_name] + " " + p[col_surname],
-            'expected': p["name_kmu"] + " " + p["surname_kmu"], #Official transliteration in the case of Ukrainian
+            'expected': p[official_name] + " " + p[official_surname], #Official transliteration in the case of Ukrainian
             'soundex' : soundex(p[col_name]) + soundex(p[col_surname]), #soundex of transliterated name and surname.
             'id': id
         })
         id+=1
 
-    result = {
-        'duplicate_groups': duplicate_groups,
-        'all_duplicates': data_all_names,
+    output = {
+        'nodes': data_all_names,
+        'soundex_groups': duplicate_groups,
         'stats': {
             'total_records': len(dataset),
             'total_soundex_groups': len(soundex_groups),
-            'duplicate_groups': len(duplicate_groups), #same as soundex groups. TODO : clean.
-            'potential_duplicates': compute_nb_duplicated(soundex_groups)
+            'n_soundex_groups': len(duplicate_groups), # ex - "duplicate_groups"
+            'n_soundex_merges': compute_nb_duplicates(soundex_groups) # ex - "potential_duplicates"
         }
     }
 
-    return result
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
-# def create_soundex_groups_old(names):
-#     soundex_groups={}
-#     for name in names:
-#         code = soundex(name) 
-#         if code not in soundex_groups:
-#             soundex_groups[code] = [name] # add name to the group
-#         else: soundex_groups[code].append(name) #TODO put in dictionary name and surname
+    print(f"Data exported to {output_file}")
 
-#     return soundex_groups
-
-# def graph_data(transliterated_names):
-#     """Take the result of soundex and put it in json for graph view
-
-#     Args:
-#         soundex_groups (_type_): _description_
-#     """
-
-#     soundex_groups = create_soundex_groups_old(transliterated_names)
-
-#     # Filter to only groups with potential duplicates
-#     duplicate_groups = {
-#         code: group for code, group in soundex_groups.items() 
-#         if len(group) > 1
-#     }
-
-#     # Prepare data for visualization
-#     all_names = []
-#     for group in duplicate_groups.values():
-#         all_names.extend(group)
-
-#     result = {
-#         'duplicate_groups': duplicate_groups,
-#         'all_duplicates': all_names,
-#         'stats': {
-#             'total_records': len(transliterated_names),
-#             'total_soundex_groups': len(soundex_groups),
-#             'duplicate_groups': len(duplicate_groups),
-#             'potential_duplicates': len(all_names)
-#         }
-#     }
-
-#     return result
+    return output
 
 
 if __name__ == "__main__":
     t_names = load_transliterated_names()  # à faire
     soundex_groups = create_soundex_groups(t_names)
 
-    nb_duplicates=compute_nb_duplicated(soundex_groups)
+    nb_duplicates=compute_nb_duplicates(soundex_groups)
     
     print("Before Levenshtein filtering:")
     print("=" * 60)

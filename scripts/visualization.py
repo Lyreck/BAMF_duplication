@@ -1,7 +1,7 @@
 import json
-# code from Claude.
+# code from Claude. # not necessary since already contained in soundex_dupicate (even if file ill-named for this).
 
-def export_for_visualization(result, output_file='graph_data.json'):
+def export_for_visualization(result, output_file='json_viz/graph_data.json'):
     """
     Export Soundex results to JSON for the JavaScript visualization.
     
@@ -42,7 +42,7 @@ def export_for_visualization(result, output_file='graph_data.json'):
     
     print(f"Data exported to {output_file}")
     print(f"\nStats:")
-    print(f"  Total records: {result['stats']['total_records']}")
+    print(f"  Number of names in dataset: {result['stats']['total_records']}")
     print(f"  Number of clusters detected with Soundex: {result['stats']['duplicate_groups']}")
     print(f"  Duplicates detected with Soundex: {result['stats']['potential_duplicates']}")
     
