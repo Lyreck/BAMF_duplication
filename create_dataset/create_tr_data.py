@@ -32,16 +32,31 @@ def british_fn(x: str) -> str:
     return translit(x, UkrainianBritish)
 
 def icu_fn(x:str) -> str:
+    if x is None:
+        return None
     tl = icu.Transliterator.createInstance('Any-Latin; Latin-ASCII')
     return tl.transliterate(x)
 
 def llm_fn(x:str) -> str:
+    if x is None:
+        return None
     return run_llm(x, "ukrainian", "mistral-small3.2")
 
+def clean_df(df:pl.DataFrame) -> pl.DataFrame:
 
+    ## Remove all ', " ", and č from all string columns
+    for col in df.select(pl.col(pl.Utf8)).columns:
+        df = df.with_columns(
+            pl.col(col)
+            .str.replace_all(r"['č]", "")
+            .str.replace_all(r"\s", "")
+            .alias(col)
+        )
+    
+    return df
 
 def add_transliterations(df: pl.DataFrame, name_col="name", surn_col="surname"):
-    return df.with_columns([
+    df= df.with_columns([
         pl.col(name_col).map_elements(cytranslit_fn).alias(f"{name_col}_cy"),
         pl.col(surn_col).map_elements(cytranslit_fn).alias(f"{surn_col}_cy"),
 
@@ -57,6 +72,8 @@ def add_transliterations(df: pl.DataFrame, name_col="name", surn_col="surname"):
         pl.col(name_col).map_elements(llm_fn).alias(f"{name_col}_llm"),
         pl.col(surn_col).map_elements(llm_fn).alias(f"{surn_col}_llm"),
     ])
+    
+    return clean_df(df)
 
 def add_transliterations_icu(df: pl.DataFrame, name_col="name", surn_col="surname"): #separate function bcz icu not on same computer
     

@@ -17,10 +17,11 @@ def export_for_visualization(result, output_file='graph_data.json'):
     for item in result['all_duplicates']: ## TO CHANGE WITH REAL DATA
 
         nodes.append({
-            'name': item, # item['name'],
-            'expected': None, # item['expected'],
+            'Original name': item['Original name'],
+            'Transliterated name': item['Transliterated name'],
+            'expected': item['expected'],
             'id': id, # item['id'],
-            'soundex': None, # item['soundex'],
+            'soundex': item['soundex'],
             'has_duplicates': True
         })
         id += 1
@@ -42,7 +43,7 @@ def export_for_visualization(result, output_file='graph_data.json'):
     print(f"Data exported to {output_file}")
     print(f"\nStats:")
     print(f"  Total records: {result['stats']['total_records']}")
-    print(f"  Soundex groups with duplicates: {result['stats']['duplicate_groups']}")
-    print(f"  Potential duplicate names: {result['stats']['potential_duplicates']}")
+    print(f"  Number of clusters detected with Soundex: {result['stats']['duplicate_groups']}")
+    print(f"  Duplicates detected with Soundex: {result['stats']['potential_duplicates']}")
     
     return output
