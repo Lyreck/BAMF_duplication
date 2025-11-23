@@ -309,6 +309,15 @@ wheels = [
 ]
 
 [[package]]
+name = "cyrtranslit"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/d7/29f3e3fadab6b2aea3cf577c2f22d99569373c1de5398a6c8b69a663ea36/cyrtranslit-1.2.0.tar.gz", hash = "sha256:cd3d2896b494f440a5fceaea42a39f6a87c95dd2344f7c957f42cfbb6bbe2036", size = 27474, upload-time = "2025-11-20T17:43:55.424Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3b/ea/ee4c5843cf5ad2d619e09f75bf768b9b8508e54eab9885dccb3eea3bb580/cyrtranslit-1.2.0-py3-none-any.whl", hash = "sha256:cd01ebc8aa335cb73601bf3dbb49d158ccdbdebc9b100c0b589b170408b0fcb2", size = 24997, upload-time = "2025-11-20T17:43:53.116Z" },
+]
+
+[[package]]
 name = "debugpy"
 version = "1.8.17"
 source = { registry = "https://pypi.org/simple" }
@@ -802,6 +811,15 @@ sdist = { url = "https://files.pythonhosted.org/packages/c7/74/97e72a36efd4ae2bc
 wheels = [
     { url = "https://files.pythonhosted.org/packages/af/33/ee4519fa02ed11a94aef9559552f3b17bb863f2ecfe1a35dc7f548cde231/matplotlib_inline-0.2.1-py3-none-any.whl", hash = "sha256:d56ce5156ba6085e00a9d54fead6ed29a9c47e215cd1bba2e976ef39f5710a76", size = 9516, upload-time = "2025-10-23T09:00:20.675Z" },
 ]
+
+[[package]]
+name = "names-translator"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "translitua" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/89/35/339f19fa9c2d74309791bab3e56032a9472ace65cb400c64c2160d7e0bbb/names_translator-1.2.3.tar.gz", hash = "sha256:3e27b32307f1522101d7178148ee54cea36680bb9154522159244fe59a17541e", size = 170244, upload-time = "2020-10-12T10:16:23.951Z" }
 
 [[package]]
 name = "nest-asyncio"
@@ -1548,10 +1566,12 @@ name = "reverse-engineering"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "cyrtranslit" },
     { name = "fuzzy" },
     { name = "kagglehub" },
     { name = "levenshtein" },
     { name = "matplotlib" },
+    { name = "names-translator" },
     { name = "numpy" },
     { name = "ollama" },
     { name = "pandas" },
@@ -1568,10 +1588,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "cyrtranslit", specifier = ">=1.2.0" },
     { name = "fuzzy", specifier = ">=1.2.2" },
     { name = "kagglehub", specifier = ">=0.3.13" },
     { name = "levenshtein", specifier = ">=0.27.1" },
     { name = "matplotlib", specifier = ">=3.10.7" },
+    { name = "names-translator", specifier = ">=1.2.3" },
     { name = "numpy", specifier = ">=2.3.4" },
     { name = "ollama", specifier = ">=0.6.0" },
     { name = "pandas", specifier = ">=2.3.3" },
@@ -1773,6 +1795,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/eb/79/72064e6a701c2183016abbbfedaba506d81e30e232a68c9f0d6f6fcd1574/traitlets-5.14.3.tar.gz", hash = "sha256:9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7", size = 161621, upload-time = "2024-04-19T11:11:49.746Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/00/c0/8f5d070730d7836adc9c9b6408dec68c6ced86b304a9b26a14df072a6e8c/traitlets-5.14.3-py3-none-any.whl", hash = "sha256:b74e89e397b1ed28cc831db7aea759ba6640cb3de13090ca145426688ff1ac4f", size = 85359, upload-time = "2024-04-19T11:11:46.763Z" },
+]
+
+[[package]]
+name = "translitua"
+version = "1.3.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/fe/75a61be2ecc84cb810fa533582957a81157300382e8589a481d261d0d490/translitua-1.3.2.tar.gz", hash = "sha256:3e7fb82519d0bf2ed93779f2f441113d57b84ffa934d7515b23bf3b0293adbf1", size = 11151, upload-time = "2023-01-19T23:48:56.813Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/14/17/ab06c056cb62680832db4e1cc5359514461c36cc251b30b03a62ce4fcf7d/translitua-1.3.2-py2.py3-none-any.whl", hash = "sha256:75d2a4a69b627f3cae2e831c83405cc0b7ee325bbe40be4073a3346c58a7b44c", size = 9090, upload-time = "2023-01-19T23:48:54.819Z" },
 ]
 
 [[package]]

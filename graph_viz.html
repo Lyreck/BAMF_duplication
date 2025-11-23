@@ -13,7 +13,7 @@
             background: #1a1a2e;
             color: #eee;
         }
-        
+
         #controls {
             background: #16213e;
             padding: 20px;
@@ -21,22 +21,22 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        
+
         .control-group {
             margin-bottom: 15px;
         }
-        
+
         label {
             display: inline-block;
             width: 180px;
             font-weight: 500;
         }
-        
+
         input[type="range"] {
             width: 250px;
             vertical-align: middle;
         }
-        
+
         input[type="file"] {
             padding: 8px;
             border: 1px solid #444;
@@ -44,7 +44,7 @@
             background: #0f3460;
             color: #eee;
         }
-        
+
         button {
             background: #e94560;
             color: white;
@@ -55,37 +55,37 @@
             font-size: 14px;
             margin-left: 10px;
         }
-        
+
         button:hover {
             background: #c23649;
         }
-        
+
         button:disabled {
             background: #666;
             cursor: not-allowed;
         }
-        
+
         #graph {
             background: #16213e;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        
+
         .node {
             cursor: pointer;
             stroke: #fff;
             stroke-width: 2px;
         }
-        
+
         .node:hover {
             stroke-width: 3px;
         }
-        
+
         .link {
             stroke: #999;
             stroke-opacity: 0.6;
         }
-        
+
         .node-label {
             font-size: 11px;
             pointer-events: none;
@@ -93,7 +93,7 @@
             text-anchor: middle;
             font-weight: 500;
         }
-        
+
         .tooltip {
             position: absolute;
             background: rgba(0, 0, 0, 0.95);
@@ -107,7 +107,7 @@
             max-width: 300px;
             border: 1px solid #e94560;
         }
-        
+
         #stats {
             background: #16213e;
             padding: 15px;
@@ -117,24 +117,24 @@
             gap: 30px;
             flex-wrap: wrap;
         }
-        
+
         .stat {
             flex: 1;
             min-width: 150px;
         }
-        
+
         .stat-value {
             font-size: 24px;
             font-weight: bold;
             color: #e94560;
         }
-        
+
         .stat-label {
             font-size: 12px;
             color: #aaa;
             text-transform: uppercase;
         }
-        
+
         .legend {
             margin-top: 15px;
             font-size: 12px;
@@ -142,13 +142,13 @@
             background: rgba(255,255,255,0.05);
             border-radius: 4px;
         }
-        
+
         .legend-item {
             display: inline-block;
             margin-right: 20px;
             margin-bottom: 5px;
         }
-        
+
         .legend-color {
             display: inline-block;
             width: 12px;
@@ -157,7 +157,7 @@
             border-radius: 50%;
             vertical-align: middle;
         }
-        
+
         .info-box {
             background: rgba(233, 69, 96, 0.1);
             border: 1px solid #e94560;
@@ -166,44 +166,55 @@
             margin-top: 10px;
             font-size: 13px;
         }
-
         /*for search of nodes */
         .node.highlighted {
             stroke: #00ff00 !important;
             stroke-width: 4px !important;
         }
-
         .node.dimmed {
             opacity: 0.3;
         }
-
         .link.dimmed {
             opacity: 0.1;
         }
-
     </style>
 </head>
 <body>
     <div id="controls">
         <h2 style="margin-top: 0;">Soundex + Levenshtein-Damerau Duplicate Detection</h2>
-        
+
         <div class="info-box">
-            <strong>📊 How it works:</strong> Python uses Soundex to pre-filter potential duplicates. 
-            The visualization uses Levenshtein distance for the adjustable similarity threshold.
+            <p><strong>❗ How it works:</strong></p>
+            <p>The clustering algorithm uses phonetics and orthographic resemblance to match names and surnames.</p>
+            <p>You can adjust the threshold slider to control the tolerance on orthographic errors.</p>
+            <p>You must first load data. Data is available as a simple sample, and pre-loaded datasets are made available.</p>
+            <p>You can also choose to import your own JSON file (see below).</p>
         </div>
-        
+
+
         <div class="control-group" style="margin-top: 15px;">
-            <label>Load JSON Data:</label>
-            <input type="file" id="fileInput" accept=".json">
+            <label>Load Data:</label>
+            <select id="dataSourceSelect" style="width: 250px; padding: 8px; background: #0f3460; color: #eee; border: 1px solid #444; border-radius: 4px;">
+                <option value="upload">Load JSON Data (Upload)</option>
+                <option value="server">Load from Server</option>
+            </select>
+            <button onclick="loadSelectedData()">Load</button>
             <button onclick="loadSampleData()">Load Sample Data</button>
         </div>
-        
+
+        <div class="control-group">
+            <label> (If remote) Choose File:</label>
+            <select id="remoteFileSelect" style="width: 250px; padding: 8px; background: #0f3460; color: #eee; border: 1px solid #444; border-radius: 4px;">
+                <option value="">Select a file...</option>
+            </select>
+        </div>
+
         <div class="control-group">
             <label>Levenshtein Threshold:</label>
             <input type="range" id="threshold" min="0" max="100" value="65" step="5">
             <span id="thresholdValue">65%</span>
         </div>
-        
+
         <div class="control-group">
             <label>Show Soundex Groups:</label>
             <input type="checkbox" id="showSoundex" checked>
@@ -211,13 +222,12 @@
                 (Highlight names with same Soundex code)
             </span>
         </div>
-
         <div class="control-group">
             <label>Search Name:</label>
             <input type="text" id="searchInput" placeholder="Type to search..." style="width: 250px;">
             <button onclick="clearSearch()">Clear</button>
         </div>
-        
+
         <div class="legend">
             <div><strong>Node Colors:</strong></div>
             <div class="legend-item">
@@ -238,9 +248,9 @@
             </div>
         </div>
     </div>
-    
+
     <svg id="graph" width="100%" height="700"></svg>
-    
+
     <div id="stats">
         <div class="stat">
             <div class="stat-value" id="totalNodes">0</div>
@@ -259,36 +269,41 @@
             <div class="stat-label">Duplicate Clusters</div>
         </div>
     </div>
-    
+
     <div class="tooltip" id="tooltip"></div>
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
 
     <script>
+        // SERVER CONFIGURATION
+        const API_BASE_URL = 'https://nearest-far-lady-hence.trycloudflare.com' // 'https://files.fileserver35.duckdns.org';  // CHANGE THIS!
+        const API_KEY = '2QsqOtVqAI1z4i5Tzm6R8OisKjIabfl454PS-HRcOuo';  // CHANGE THIS! (keep this secret)
+
         // Damerau-Levenshtein distance calculation
         function damerauLevenshtein(a, b) {
             const an = a.length;
             const bn = b.length;
-            
+
             if (an === 0) return bn;
             if (bn === 0) return an;
-            
+
             const matrix = Array(bn + 1).fill(null).map(() => Array(an + 1).fill(0));
-            
+
             for (let i = 0; i <= bn; i++) matrix[i][0] = i;
             for (let j = 0; j <= an; j++) matrix[0][j] = j;
-            
+
             for (let i = 1; i <= bn; i++) {
                 for (let j = 1; j <= an; j++) {
                     const cost = a[j - 1] === b[i - 1] ? 0 : 1;
-                    
+
                     matrix[i][j] = Math.min(
                         matrix[i - 1][j] + 1,      // deletion
                         matrix[i][j - 1] + 1,      // insertion
                         matrix[i - 1][j - 1] + cost // substitution
                     );
-                    
+
                     // Transposition
-                    if (i > 1 && j > 1 && 
-                        a[j - 1] === b[i - 2] && 
+                    if (i > 1 && j > 1 &&
+                        a[j - 1] === b[i - 2] &&
                         a[j - 2] === b[i - 1]) {
                         matrix[i][j] = Math.min(
                             matrix[i][j],
@@ -297,7 +312,7 @@
                     }
                 }
             }
-            
+
             return matrix[bn][an];
         }
 
@@ -305,12 +320,12 @@
         function levenshteinSimilarity(s1, s2) {
             s1 = s1.toLowerCase();
             s2 = s2.toLowerCase();
-            
+
             const distance = damerauLevenshtein(s1, s2);
             const maxLen = Math.max(s1.length, s2.length);
-            
+
             if (maxLen === 0) return 1.0;
-            
+
             return 1 - (distance / maxLen);
         }
 
@@ -318,40 +333,39 @@
         let selectedNode = null;
         const width = 1200;
         const height = 700;
-        
+
         const svg = d3.select("#graph");
         const g = svg.append("g");
-        
+
         const zoom = d3.zoom()
             .scaleExtent([0.1, 4])
             .on("zoom", (event) => {
                 g.attr("transform", event.transform);
             });
-        
+
         svg.call(zoom);
-        
+
         const simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(d => d.id).distance(100))
             .force("charge", d3.forceManyBody().strength(-300))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force("collision", d3.forceCollide().radius(30));
 
-
-        // Search functionality    
+        // Search functionality
         let searchResults = [];
 
         function searchNames() {
             const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
-            
+
             if (!graphData || !searchTerm) {
                 clearSearch();
                 return;
             }
-            
+
             searchResults = graphData.nodes
                 .map((n, i) => ({...n, index: i}))
                 .filter(n => n.name.toLowerCase().includes(searchTerm));
-            
+
             highlightSearchResults();
         }
 
@@ -359,7 +373,7 @@
             g.selectAll("circle")
                 .classed("highlighted", d => searchResults.some(r => r.index === d.id))
                 .classed("dimmed", d => searchResults.length > 0 && !searchResults.some(r => r.index === d.id));
-            
+
             g.selectAll("line")
                 .classed("dimmed", d => {
                     if (searchResults.length === 0) return false;
@@ -367,7 +381,7 @@
                     const targetId = typeof d.target === 'object' ? d.target.id : d.target;
                     return !searchResults.some(r => r.index === sourceId || r.index === targetId);
                 });
-            
+
             g.selectAll("text")
                 .style("opacity", d => {
                     if (searchResults.length === 0) return 1;
@@ -378,27 +392,27 @@
         function clearSearch() {
             document.getElementById("searchInput").value = '';
             searchResults = [];
-            
+
             g.selectAll("circle")
                 .classed("highlighted", false)
                 .classed("dimmed", false);
-            
+
             g.selectAll("line")
                 .classed("dimmed", false);
-            
+
             g.selectAll("text")
                 .style("opacity", 1);
         }
 
         // Add event listener for search input (add this near the other event listeners)
         document.getElementById("searchInput").addEventListener("input", searchNames);
-        
+
         function updateGraph() {
             if (!graphData) return;
-            
+
             const threshold = document.getElementById("threshold").value / 100;
             const showSoundex = document.getElementById("showSoundex").checked;
-            
+
             const nodes = graphData.nodes.map((n, i) => ({
                 id: i,
                 name: n.name,
@@ -408,7 +422,7 @@
                 has_duplicates: n.has_duplicates,
                 connections: 0
             }));
-            
+
             // Create links based on Levenshtein similarity
             const links = [];
             for (let i = 0; i < nodes.length; i++) {
@@ -425,25 +439,25 @@
                     }
                 }
             }
-            
+
             // Calculate clusters
             const visited = new Set();
             let clusterCount = 0;
-            
+
             function dfs(nodeId, component) {
                 if (visited.has(nodeId)) return;
                 visited.add(nodeId);
                 component.push(nodeId);
-                
+
                 links.forEach(link => {
                     const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
                     const targetId = typeof link.target === 'object' ? link.target.id : link.target;
-                    
+
                     if (sourceId === nodeId) dfs(targetId, component);
                     if (targetId === nodeId) dfs(sourceId, component);
                 });
             }
-            
+
             nodes.forEach((node, i) => {
                 if (!visited.has(i) && node.connections > 0) {
                     const component = [];
@@ -451,19 +465,19 @@
                     if (component.length > 1) clusterCount++;
                 }
             });
-            
+
             // Count unique Soundex groups
             const soundexSet = new Set(nodes.map(n => n.soundex));
-            
+
             // Update stats
             document.getElementById("totalNodes").textContent = nodes.length;
             document.getElementById("totalLinks").textContent = links.length;
             document.getElementById("soundexGroups").textContent = soundexSet.size;
             document.getElementById("clusters").textContent = clusterCount;
-            
+
             // Clear existing
             g.selectAll("*").remove();
-            
+
             // Draw links
             const link = g.append("g")
                 .selectAll("line")
@@ -473,7 +487,7 @@
                 .attr("class", "link")
                 .attr("stroke-width", d => Math.max(1, d.similarity * 4))
                 .attr("stroke-opacity", d => d.similarity * 0.8);
-            
+
             // Draw nodes
             const node = g.append("g")
                 .selectAll("circle")
@@ -483,7 +497,7 @@
                 .attr("class", "node")
                 .attr("r", d => Math.max(8, 8 + d.connections * 2))
                 .attr("fill", d => {
-                    if (showSoundex && selectedNode && selectedNode.soundexGroup && 
+                    if (showSoundex && selectedNode && selectedNode.soundexGroup &&
                         selectedNode.soundexGroup.includes(d.name)) {
                         return "#a855f7";
                     }
@@ -511,7 +525,7 @@
                 selectedNode = null;
                 updateGraph();
             });
-            
+
             // Add labels
             const labels = g.append("g")
                 .selectAll("text")
@@ -521,7 +535,7 @@
                 .attr("class", "node-label")
                 .attr("dy", -15)
                 .text(d => d.name);
-            
+
             // Update positions
             simulation.nodes(nodes).on("tick", () => {
                 link
@@ -529,55 +543,55 @@
                     .attr("y1", d => d.source.y)
                     .attr("x2", d => d.target.x)
                     .attr("y2", d => d.target.y);
-                
+
                 node
                     .attr("cx", d => d.x)
                     .attr("cy", d => d.y);
-                
+
                 labels
                     .attr("x", d => d.x)
                     .attr("y", d => d.y);
             });
-            
+
             simulation.force("link").links(links);
             simulation.alpha(1).restart();
         }
-        
+
         function dragstarted(event, d) {
             if (!event.active) simulation.alphaTarget(0.3).restart();
             d.fx = d.x;
             d.fy = d.y;
         }
-        
+
         function dragged(event, d) {
             d.fx = event.x;
             d.fy = event.y;
         }
-        
+
         function dragended(event, d) {
             if (!event.active) simulation.alphaTarget(0);
             d.fx = null;
             d.fy = null;
         }
-        
+
         function showTooltip(event, d) {
             const threshold = document.getElementById("threshold").value / 100;
-            
+
             const duplicates = graphData.nodes
                 .filter(n => n.id !== d.recordId && levenshteinSimilarity(d.name, n.name) >= threshold)
                 .map(n => `${n.name} (ID: ${n.id}) ${(levenshteinSimilarity(d.name, n.name) * 100).toFixed(0)}%`)
                 .join('<br>');
-            
+
             // Find which soundex group this name belongs to
             let sameSoundex = '';
             let soundexCode = 'N/A';
-            
+
             if (graphData && graphData.soundex_groups) {
                 for (const [code, names] of Object.entries(graphData.soundex_groups)) {
                     if (names.includes(d.name)) {
                         soundexCode = code;
                         // Filter by record ID, not just name
-                        const otherNodes = graphData.nodes.filter(n => 
+                        const otherNodes = graphData.nodes.filter(n =>
                             n.id !== d.recordId && names.includes(n.name)
                         );
                         sameSoundex = otherNodes.map(n => `${n.name} (ID: ${n.id})`).join(', ');
@@ -585,7 +599,7 @@
                     }
                 }
             }
-            
+
             const tooltip = document.getElementById("tooltip");
             tooltip.innerHTML = `
                 <strong>${d.name}</strong><br>
@@ -599,11 +613,11 @@
             tooltip.style.left = (event.pageX + 10) + 'px';
             tooltip.style.top = (event.pageY - 10) + 'px';
         }
-                        
+
         function hideTooltip() {
             document.getElementById("tooltip").style.display = 'none';
         }
-        
+
         function loadSampleData() {
             // Try to load `graph_data.json` located next to this HTML file.
             // If loading fails (CORS / missing file / parse error), fall back to an embedded sample.
@@ -645,12 +659,21 @@
                     updateGraph();
                 });
         }
-        
+
+        function loadSelectedData() {
+            const source = document.getElementById("dataSourceSelect").value;
+            if (source === "upload") {
+                document.getElementById("fileInput").click();
+            } else if (source === "server") {
+                loadRemoteFile();
+            }
+        }
+
         // File upload handler
         document.getElementById("fileInput").addEventListener("change", (e) => {
             const file = e.target.files[0];
             if (!file) return;
-            
+
             const reader = new FileReader();
             reader.onload = (event) => {
                 try {
@@ -662,18 +685,66 @@
             };
             reader.readAsText(file);
         });
-        
+
         // Threshold slider
         document.getElementById("threshold").addEventListener("input", (e) => {
             document.getElementById("thresholdValue").textContent = e.target.value + "%";
             updateGraph();
         });
-        
+
         // Soundex checkbox
         document.getElementById("showSoundex").addEventListener("change", updateGraph);
-        
-        // Load sample data on start
-        // loadSampleData();
+
+        // Load available files from server on page load
+        window.addEventListener('DOMContentLoaded', loadAvailableFiles);
+
+        async function loadAvailableFiles() {
+            const select = document.getElementById('remoteFileSelect');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/files`, {
+                    headers: { 'X-API-Key': API_KEY }
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+
+                // Populate dropdown with available files
+                Object.entries(data.files).forEach(([id, info]) => {
+                    const option = document.createElement('option');
+                    option.value = id;
+                    option.textContent = info.description;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Could not load file list:', error);
+                select.innerHTML = '<option value="">Server unavailable</option>';
+            }
+        }
+
+        async function loadRemoteFile() {
+            const select = document.getElementById('remoteFileSelect');
+            const fileId = select.value;
+
+            if (!fileId) {
+                alert('Please select a file');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/files/${fileId}`, {
+                    headers: { 'X-API-Key': API_KEY }
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const text = await response.text();
+                graphData = JSON.parse(text);
+                updateGraph();
+
+                alert('File loaded successfully!');
+            } catch (error) {
+                alert('Error loading file: ' + error.message);
+                console.error(error);
+            }
+        }
     </script>
 </body>
 </html>

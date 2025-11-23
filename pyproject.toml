@@ -5,10 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "cyrtranslit>=1.2.0",
     "fuzzy>=1.2.2",
     "kagglehub>=0.3.13",
     "levenshtein>=0.27.1",
     "matplotlib>=3.10.7",
+    "names-translator>=1.2.3",
     "numpy>=2.3.4",
     "ollama>=0.6.0",
     "pandas>=2.3.3",
