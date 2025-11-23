@@ -2,14 +2,14 @@
 
 # And since I already found 3 techniques for duplicate detection (levenshtein, Soundex, G2P models) then it's easier to be focused on that.
 
-#Ok chef mais je vais le faire quand meme hihihi bc I can 
-#from transliterate import translit, get_available_language_codes
+# Ok chef mais je vais le faire quand meme hihihi bc I can 
+# from transliterate import translit, get_available_language_codes
 import cyrtranslit as ctlt 
 import polars as p 
 
 from names_translator import Transliterator
 
-from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish, RussianGOST2006
+from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish
 
 # loading csvs : 
 
@@ -17,13 +17,13 @@ UA_fem_name = p.read_csv("../create_dataset/ukr_female_names.csv")
 UA_male_name = p.read_csv("../create_dataset/ukr_male_names.csv")
 UA_surnames = p.read_csv("../create_dataset/ukr_surnames.csv")
 
-#print(UA_surnames.head())
+# print(UA_surnames.head())
 
 # Let's try both algorithms. 
 # I want to take 10 lines from each dataset, transliterate each item
 # store in dictionary and see wether some have 2 or more "items"
 
-#using transliterate
+# using transliterate
 dico = {}
 # print(get_available_language_codes())
 
@@ -43,13 +43,12 @@ print(dico) """
 
 dico_cy = {}
 for row in df_translit.iter_rows():
-    for j in row :
-        if j == None : 
+    for j in row:
+        if j == None: 
             pass
-        else : 
+        else: 
             t = ctlt.to_latin(j, "ua")
-            dico_cy[t] = j 
-
+            dico_cy[t]=j
 print(dico_cy)
 
 # text = ["Дарія","Одарка","Дарина","Дарка","Дарья","Дар'я"]
@@ -74,7 +73,7 @@ for k in text :
 # can also try translit-ua package :)
 
 text = ["Дарія","Одарка","Дарина","Дарка","Дарья","Дар'я"]
-for k in text : 
+for k in text: 
     print('Translitua KMU')
     print(translit(k, UkrainianKMU))
     print("Translitua German")

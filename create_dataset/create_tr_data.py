@@ -48,7 +48,8 @@ def clean_df(df:pl.DataFrame) -> pl.DataFrame:
     for col in df.select(pl.col(pl.Utf8)).columns:
         df = df.with_columns(
             pl.col(col)
-            .str.replace_all(r"['č]", "")
+            .str.replace_all(r"[č]", "ch")
+            .str.replace_all(r"[']", "")
             .str.replace_all(r"\s", "")
             .alias(col)
         )

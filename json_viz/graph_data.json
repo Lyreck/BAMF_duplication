@@ -1,0 +1,1288 @@
+{
+  "nodes": [
+    {
+      "Original name": "Меланія Тараненко",
+      "Transliterated name": "Melania Taranenko",
+      "expected": "Melaniia Taranenko",
+      "id": 1,
+      "soundex": "M04050T06050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Меланка Таранюк",
+      "Transliterated name": "Melanka Taranuk",
+      "expected": "Melanka Taraniuk",
+      "id": 2,
+      "soundex": "M040520T060502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Маланка Таран",
+      "Transliterated name": "Malanka Taran",
+      "expected": "Malanka Taran",
+      "id": 3,
+      "soundex": "M040520T0605",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Мелашка Таранов",
+      "Transliterated name": "Melaska Taranov",
+      "expected": "Melashka Taranov",
+      "id": 4,
+      "soundex": "M04020T060501",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Малашка Тараник",
+      "Transliterated name": "Malaska Taranik",
+      "expected": "Malashka Taranyk",
+      "id": 5,
+      "soundex": "M04020T060502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Мелана Таранишин",
+      "Transliterated name": "Melana Taranisin",
+      "expected": "Melana Taranyshyn",
+      "id": 6,
+      "soundex": "M04050T06050205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Малана Таранець",
+      "Transliterated name": "Malana Taranec",
+      "expected": "Malana Taranets",
+      "id": 7,
+      "soundex": "M04050T060502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Димитрій Млинар",
+      "Transliterated name": "Dimitrij Mlinar",
+      "expected": "Dymytrii Mlynar",
+      "id": 8,
+      "soundex": "D0503602M40506",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Дмитро Млинарчук",
+      "Transliterated name": "Dmitro Mlinarcuk",
+      "expected": "Dmytro Mlynarchuk",
+      "id": 9,
+      "soundex": "D50360M40506202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Валерія Томко",
+      "Transliterated name": "Valeria Tomko",
+      "expected": "Valeriia Tomko",
+      "id": 10,
+      "soundex": "V04060T0520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лера Томенко",
+      "Transliterated name": "Lera Tomenko",
+      "expected": "Lera Tomenko",
+      "id": 11,
+      "soundex": "L060T050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лєра Томченко",
+      "Transliterated name": "Lera Tomcenko",
+      "expected": "Liera Tomchenko",
+      "id": 12,
+      "soundex": "L060T0520520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Леруня Томишин",
+      "Transliterated name": "Leruna Tomisin",
+      "expected": "Lerunia Tomyshyn",
+      "id": 13,
+      "soundex": "L06050T050205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Леруся Томчишин",
+      "Transliterated name": "Lerusa Tomcisin",
+      "expected": "Lerusia Tomchyshyn",
+      "id": 14,
+      "soundex": "L06020T0520205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Леруша Томин",
+      "Transliterated name": "Lerusa Tomin",
+      "expected": "Lerusha Tomyn",
+      "id": 15,
+      "soundex": "L06020T0505",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лерочка Томич",
+      "Transliterated name": "Lerocka Tomic",
+      "expected": "Lerochka Tomych",
+      "id": 16,
+      "soundex": "L06020T0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Дарія Хоменко",
+      "Transliterated name": "Daria Homenko",
+      "expected": "Dariia Khomenko",
+      "id": 17,
+      "soundex": "D060H050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Одарка Хомченко",
+      "Transliterated name": "Odarka Homcenko",
+      "expected": "Odarka Khomchenko",
+      "id": 18,
+      "soundex": "O30620H0520520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Дарина Хомчак",
+      "Transliterated name": "Darina Homcak",
+      "expected": "Daryna Khomchak",
+      "id": 19,
+      "soundex": "D06050H05202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Дарка Хома",
+      "Transliterated name": "Darka Homa",
+      "expected": "Darka Khoma",
+      "id": 20,
+      "soundex": "D0620H050",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Дарья Хомич",
+      "Transliterated name": "Dara Homic",
+      "expected": "Daria Khomych",
+      "id": 21,
+      "soundex": "D060H0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Даря Хомець",
+      "Transliterated name": "Dara Homec",
+      "expected": "Daria Khomets",
+      "id": 22,
+      "soundex": "D060H0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Авраам Портний",
+      "Transliterated name": "Avraam Portnij",
+      "expected": "Avraam Portnyi",
+      "id": 23,
+      "soundex": "A1605P063502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Авраамій Портнюк",
+      "Transliterated name": "Avraamij Portnuk",
+      "expected": "Avraamii Portniuk",
+      "id": 24,
+      "soundex": "A160502P063502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аврамій Портненко",
+      "Transliterated name": "Avramij Portnenko",
+      "expected": "Avramii Portnenko",
+      "id": 25,
+      "soundex": "A160502P06350520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Григорій Романенко",
+      "Transliterated name": "Grigorij Romanenko",
+      "expected": "Hryhorii Romanenko",
+      "id": 26,
+      "soundex": "G6020602R05050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гриць Ромасенко",
+      "Transliterated name": "Gric Romasenko",
+      "expected": "Hryts Romasenko",
+      "id": 27,
+      "soundex": "G602R05020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Григір Ромашенко",
+      "Transliterated name": "Grigir Romasenko",
+      "expected": "Hryhir Romashenko",
+      "id": 28,
+      "soundex": "G60206R05020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Григор Ромащенко",
+      "Transliterated name": "Grigor Romasenko",
+      "expected": "Hryhor Romashchenko",
+      "id": 29,
+      "soundex": "G60206R05020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Грись Романченко",
+      "Transliterated name": "Gris Romancenko",
+      "expected": "Hrys Romanchenko",
+      "id": 30,
+      "soundex": "G602R050520520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аделаїда Коваль",
+      "Transliterated name": "Adelaida Koval",
+      "expected": "Adelaida Koval",
+      "id": 31,
+      "soundex": "A304030K0104",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аделіна Коваленко",
+      "Transliterated name": "Adelina Kovalenko",
+      "expected": "Adelina Kovalenko",
+      "id": 32,
+      "soundex": "A304050K01040520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аделя Ковалюк",
+      "Transliterated name": "Adela Kovaluk",
+      "expected": "Adelia Kovaliuk",
+      "id": 33,
+      "soundex": "A3040K010402",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Адиля Ковальчук",
+      "Transliterated name": "Adila Kovalcuk",
+      "expected": "Adylia Kovalchuk",
+      "id": 34,
+      "soundex": "A3040K0104202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Адель Ковалик",
+      "Transliterated name": "Adel Kovalik",
+      "expected": "Adel Kovalyk",
+      "id": 35,
+      "soundex": "A304K010402",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Валент Залізняк",
+      "Transliterated name": "Valent Zaliznak",
+      "expected": "Valent Zalizniak",
+      "id": 36,
+      "soundex": "V04053Z0402502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Уалент Залізнюк",
+      "Transliterated name": "Ualent Zaliznuk",
+      "expected": "Ualent Zalizniuk",
+      "id": 37,
+      "soundex": "U04053Z0402502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Микола Матюш",
+      "Transliterated name": "Mikola Matus",
+      "expected": "Mykola Matiush",
+      "id": 38,
+      "soundex": "M02040M0302",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Миколай Матяш",
+      "Transliterated name": "Mikolaj Matas",
+      "expected": "Mykolai Matiash",
+      "id": 39,
+      "soundex": "M020402M0302",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Микула Матюха",
+      "Transliterated name": "Mikula Matuha",
+      "expected": "Mykula Matiukha",
+      "id": 40,
+      "soundex": "M02040M030",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Коля Матюшенко",
+      "Transliterated name": "Kola Matusenko",
+      "expected": "Kolia Matiushenko",
+      "id": 41,
+      "soundex": "K040M03020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гавриїл Плахотник",
+      "Transliterated name": "Gavriil Plahotnik",
+      "expected": "Havryil Plakhotnyk",
+      "id": 42,
+      "soundex": "G01604P403502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гаврило Плахотнюк",
+      "Transliterated name": "Gavrilo Plahotnuk",
+      "expected": "Havrylo Plakhotniuk",
+      "id": 43,
+      "soundex": "G016040P403502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ореста Попенко",
+      "Transliterated name": "Oresta Popenko",
+      "expected": "Oresta Popenko",
+      "id": 44,
+      "soundex": "O60230P010520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агнеса Приходько",
+      "Transliterated name": "Agnesa Prihodko",
+      "expected": "Ahnesa Prykhodko",
+      "id": 45,
+      "soundex": "A25020P60320",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агнія Приходченко",
+      "Transliterated name": "Agnia Prihodcenko",
+      "expected": "Ahniia Prykhodchenko",
+      "id": 46,
+      "soundex": "A250P60320520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агна Приходюк",
+      "Transliterated name": "Agna Prihoduk",
+      "expected": "Ahna Prykhodiuk",
+      "id": 47,
+      "soundex": "A250P60302",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Августа Матеєнко",
+      "Transliterated name": "Avgusta Mateenko",
+      "expected": "Avhusta Mateienko",
+      "id": 48,
+      "soundex": "A120230M030520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Густа Матейчук",
+      "Transliterated name": "Gusta Matejcuk",
+      "expected": "Husta Mateichuk",
+      "id": 49,
+      "soundex": "G0230M030202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Никифор Муха",
+      "Transliterated name": "Nikifor Muha",
+      "expected": "Nykyfor Mukha",
+      "id": 50,
+      "soundex": "N020106M000",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ничипір Мушенко",
+      "Transliterated name": "Nicipir Musenko",
+      "expected": "Nychypir Mushenko",
+      "id": 51,
+      "soundex": "N020106M020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Нечипір Мущенко",
+      "Transliterated name": "Necipir Musenko",
+      "expected": "Nechypir Mushchenko",
+      "id": 52,
+      "soundex": "N020106M020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Никифір Мущук",
+      "Transliterated name": "Nikifir Musuk",
+      "expected": "Nykyfir Mushchuk",
+      "id": 53,
+      "soundex": "N020106M0202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Сусанна Колісник",
+      "Transliterated name": "Susanna Kolisnik",
+      "expected": "Susanna Kolisnyk",
+      "id": 54,
+      "soundex": "S02050K0402502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Сусана Колісниченко",
+      "Transliterated name": "Susana Kolisnicenko",
+      "expected": "Susana Kolisnychenko",
+      "id": 55,
+      "soundex": "S02050K04025020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Сосанна Колісничук",
+      "Transliterated name": "Sosanna Kolisnicuk",
+      "expected": "Sosanna Kolisnychuk",
+      "id": 56,
+      "soundex": "S02050K040250202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Зузана Колесник",
+      "Transliterated name": "Zuzana Kolesnik",
+      "expected": "Zuzana Kolesnyk",
+      "id": 57,
+      "soundex": "Z02050K0402502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Сюзанна Колесниченко",
+      "Transliterated name": "Suzanna Kolesnicenko",
+      "expected": "Siuzanna Kolesnychenko",
+      "id": 58,
+      "soundex": "S02050K04025020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агафія Романів",
+      "Transliterated name": "Agafia Romaniv",
+      "expected": "Ahafiia Romaniv",
+      "id": 59,
+      "soundex": "A2010R050501",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агапія Романов",
+      "Transliterated name": "Agapia Romanov",
+      "expected": "Ahapiia Romanov",
+      "id": 60,
+      "soundex": "A2010R050501",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гафія Романій",
+      "Transliterated name": "Gafia Romanij",
+      "expected": "Hafiia Romanii",
+      "id": 61,
+      "soundex": "G010R050502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гапка Романіва",
+      "Transliterated name": "Gapka Romaniva",
+      "expected": "Hapka Romaniva",
+      "id": 62,
+      "soundex": "G0120R0505010",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Андріан Мельник",
+      "Transliterated name": "Andrian Melnik",
+      "expected": "Andrian Melnyk",
+      "id": 63,
+      "soundex": "A53605M04502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Андріян Мельниченко",
+      "Transliterated name": "Andrian Melnicenko",
+      "expected": "Andriian Melnychenko",
+      "id": 64,
+      "soundex": "A53605M045020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Адріан Мельничук",
+      "Transliterated name": "Adrian Melnicuk",
+      "expected": "Adrian Melnychuk",
+      "id": 65,
+      "soundex": "A3605M0450202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Адріан Мельникович",
+      "Transliterated name": "Adrian Melnikovic",
+      "expected": "Adrian Melnykovych",
+      "id": 66,
+      "soundex": "A3605M045020102",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ольга Ґуля",
+      "Transliterated name": "Olga Gula",
+      "expected": "Olha Gulia",
+      "id": 67,
+      "soundex": "O420G040",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Хельга Ґуленко",
+      "Transliterated name": "Helga Gulenko",
+      "expected": "Khelha Gulenko",
+      "id": 68,
+      "soundex": "H0420G040520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Оля Ґульченко",
+      "Transliterated name": "Ola Gulcenko",
+      "expected": "Olia Gulchenko",
+      "id": 69,
+      "soundex": "O400G0420520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Леся Ґульчук",
+      "Transliterated name": "Lesa Gulcuk",
+      "expected": "Lesia Gulchuk",
+      "id": 70,
+      "soundex": "L020G04202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Олеся Ґульчак",
+      "Transliterated name": "Olesa Gulcak",
+      "expected": "Olesia Gulchak",
+      "id": 71,
+      "soundex": "O4020G04202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Орина Мацьо",
+      "Transliterated name": "Orina Maco",
+      "expected": "Oryna Matso",
+      "id": 72,
+      "soundex": "O6050M020",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Судислава Тар",
+      "Transliterated name": "Sudislava Tar",
+      "expected": "Sudyslava Tar",
+      "id": 73,
+      "soundex": "S03024010T060",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Іоан Чоботар",
+      "Transliterated name": "Ioan Cobotar",
+      "expected": "Ioan Chobotar",
+      "id": 74,
+      "soundex": "I050C010306",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Іван Чоботарь",
+      "Transliterated name": "Ivan Cobotar",
+      "expected": "Ivan Chobotar",
+      "id": 75,
+      "soundex": "I105C010306",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ваня Чоботарьов",
+      "Transliterated name": "Vana Cobotarov",
+      "expected": "Vania Chobotarov",
+      "id": 76,
+      "soundex": "V050C01030601",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Йоан Чоботаренко",
+      "Transliterated name": "Joan Cobotarenko",
+      "expected": "Yoan Chobotarenko",
+      "id": 77,
+      "soundex": "J050C0103060520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Тереза Матвієнко",
+      "Transliterated name": "Tereza Matvienko",
+      "expected": "Tereza Matviienko",
+      "id": 78,
+      "soundex": "T06020M0310520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Кирило Фомко",
+      "Transliterated name": "Kirilo Fomko",
+      "expected": "Kyrylo Fomko",
+      "id": 79,
+      "soundex": "K06040F0520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Кирил Фоменко",
+      "Transliterated name": "Kiril Fomenko",
+      "expected": "Kyryl Fomenko",
+      "id": 80,
+      "soundex": "K0604F050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Кіріл Фомченко",
+      "Transliterated name": "Kiril Fomcenko",
+      "expected": "Kiril Fomchenko",
+      "id": 81,
+      "soundex": "K0604F0520520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Киріл Фомишин",
+      "Transliterated name": "Kiril Fomisin",
+      "expected": "Kyril Fomyshyn",
+      "id": 82,
+      "soundex": "K0604F050205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Цириль Фомчук",
+      "Transliterated name": "Ciril Fomcuk",
+      "expected": "Tsyryl Fomchuk",
+      "id": 83,
+      "soundex": "C0604F05202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Трояна Пелех",
+      "Transliterated name": "Troana Peleh",
+      "expected": "Troiana Pelekh",
+      "id": 84,
+      "soundex": "T6050P040",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анна Тимчук",
+      "Transliterated name": "Anna Timcuk",
+      "expected": "Anna Tymchuk",
+      "id": 85,
+      "soundex": "A500T05202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ганна Тимочук",
+      "Transliterated name": "Ganna Timocuk",
+      "expected": "Hanna Tymochuk",
+      "id": 86,
+      "soundex": "G050T050202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анничка Тимощук",
+      "Transliterated name": "Annicka Timosuk",
+      "expected": "Annychka Tymoshchuk",
+      "id": 87,
+      "soundex": "A5020T050202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анка Тимків",
+      "Transliterated name": "Anka Timkiv",
+      "expected": "Anka Tymkiv",
+      "id": 88,
+      "soundex": "A520T05201",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аня Тиміш",
+      "Transliterated name": "Ana Timis",
+      "expected": "Ania Tymish",
+      "id": 89,
+      "soundex": "A500T0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Юліан Олійник",
+      "Transliterated name": "Ulian Olijnik",
+      "expected": "Yulian Oliinyk",
+      "id": 90,
+      "soundex": "U405O402502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Юлій Олійниченко",
+      "Transliterated name": "Ulij Olijnicenko",
+      "expected": "Yulii Oliinychenko",
+      "id": 91,
+      "soundex": "U402O4025020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Юрій Олійничук",
+      "Transliterated name": "Urij Olijnicuk",
+      "expected": "Yurii Oliinychuk",
+      "id": 92,
+      "soundex": "U602O40250202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Юлько Оліяр",
+      "Transliterated name": "Ulko Oliar",
+      "expected": "Yulko Oliiar",
+      "id": 93,
+      "soundex": "U420O406",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Юлянчик Оліярчук",
+      "Transliterated name": "Ulancik Oliarcuk",
+      "expected": "Yulianchyk Oliiarchuk",
+      "id": 94,
+      "soundex": "U405202O406202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Єва Мокрий",
+      "Transliterated name": "Eva Mokrij",
+      "expected": "Yeva Mokryi",
+      "id": 95,
+      "soundex": "E100M02602",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Євгенія Мокрій",
+      "Transliterated name": "Evgenia Mokrij",
+      "expected": "Yevheniia Mokrii",
+      "id": 96,
+      "soundex": "E12050M02602",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Євгена Мокренко",
+      "Transliterated name": "Evgena Mokrenko",
+      "expected": "Yevhena Mokrenko",
+      "id": 97,
+      "soundex": "E12050M0260520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Югина Мокряк",
+      "Transliterated name": "Ugina Mokrak",
+      "expected": "Yuhyna Mokriak",
+      "id": 98,
+      "soundex": "U2050M02602",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ївга Мокрук",
+      "Transliterated name": "Ivga Mokruk",
+      "expected": "Yivha Mokruk",
+      "id": 99,
+      "soundex": "I120M02602",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Рогволода Мартиш",
+      "Transliterated name": "Rogvoloda Martis",
+      "expected": "Rohvoloda Martysh",
+      "id": 100,
+      "soundex": "R02104030M06302",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Пелагія Швець",
+      "Transliterated name": "Pelagia Svec",
+      "expected": "Pelahiia Shvets",
+      "id": 101,
+      "soundex": "P04020S102",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Пелагея Шевченко",
+      "Transliterated name": "Pelagea Sevcenko",
+      "expected": "Pelaheia Shevchenko",
+      "id": 102,
+      "soundex": "P04020S0120520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Палагна Шевчук",
+      "Transliterated name": "Palagna Sevcuk",
+      "expected": "Palahna Shevchuk",
+      "id": 103,
+      "soundex": "P040250S01202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Палазга Шевчик",
+      "Transliterated name": "Palazga Sevcik",
+      "expected": "Palazgha Shevchyk",
+      "id": 104,
+      "soundex": "P04020S01202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Палажка Шевчишин",
+      "Transliterated name": "Palazka Sevcisin",
+      "expected": "Palazhka Shevchyshyn",
+      "id": 105,
+      "soundex": "P04020S0120205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Пазина Шевців",
+      "Transliterated name": "Pazina Sevciv",
+      "expected": "Pazyna Shevtsiv",
+      "id": 106,
+      "soundex": "P02050S01201",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Єлизавета Лисенко",
+      "Transliterated name": "Elizaveta Lisenko",
+      "expected": "Yelyzaveta Lysenko",
+      "id": 107,
+      "soundex": "E40201030L020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лизавета Лисиця",
+      "Transliterated name": "Lizaveta Lisica",
+      "expected": "Lyzaveta Lysytsia",
+      "id": 108,
+      "soundex": "L0201030L02020",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лисавета Лисюк",
+      "Transliterated name": "Lisaveta Lisuk",
+      "expected": "Lysaveta Lysiuk",
+      "id": 109,
+      "soundex": "L0201030L0202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Гальшка Лисяк",
+      "Transliterated name": "Galska Lisak",
+      "expected": "Halshka Lysiak",
+      "id": 110,
+      "soundex": "G0420L0202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Галшка Лисняк",
+      "Transliterated name": "Galska Lisnak",
+      "expected": "Halshka Lysniak",
+      "id": 111,
+      "soundex": "G0420L02502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ліза Лищик",
+      "Transliterated name": "Liza Lisik",
+      "expected": "Liza Lyshchyk",
+      "id": 112,
+      "soundex": "L020L0202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марія Шваля",
+      "Transliterated name": "Maria Svala",
+      "expected": "Mariia Shvalia",
+      "id": 113,
+      "soundex": "M060S1040",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марічка Швач",
+      "Transliterated name": "Maricka Svac",
+      "expected": "Marichka Shvach",
+      "id": 114,
+      "soundex": "M06020S102",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марійка Шваченко",
+      "Transliterated name": "Marijka Svacenko",
+      "expected": "Mariika Shvachenko",
+      "id": 115,
+      "soundex": "M06020S1020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Маруся Швачка",
+      "Transliterated name": "Marusa Svacka",
+      "expected": "Marusia Shvachka",
+      "id": 116,
+      "soundex": "M06020S1020",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марися Швачук",
+      "Transliterated name": "Marisa Svacuk",
+      "expected": "Marysia Shvachuk",
+      "id": 117,
+      "soundex": "M06020S10202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марічка Швадюк",
+      "Transliterated name": "Maricka Svaduk",
+      "expected": "Marichka Shvadiuk",
+      "id": 118,
+      "soundex": "M06020S10302",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Марина Швадченко",
+      "Transliterated name": "Marina Svadcenko",
+      "expected": "Maryna Shvadchenko",
+      "id": 119,
+      "soundex": "M06050S10320520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Мстислава Тарасенко",
+      "Transliterated name": "Mstislava Tarasenko",
+      "expected": "Mstyslava Tarasenko",
+      "id": 120,
+      "soundex": "M23024010T06020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Агата Романюк",
+      "Transliterated name": "Agata Romanuk",
+      "expected": "Ahata Romaniuk",
+      "id": 121,
+      "soundex": "A2030R050502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аґата Романчук",
+      "Transliterated name": "Agata Romancuk",
+      "expected": "Agata Romanchuk",
+      "id": 122,
+      "soundex": "A2030R0505202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Тіна Пономаренко",
+      "Transliterated name": "Tina Ponomarenko",
+      "expected": "Tina Ponomarenko",
+      "id": 123,
+      "soundex": "T050P0505060520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анастасія Бондар",
+      "Transliterated name": "Anastasia Bondar",
+      "expected": "Anastasiia Bondar",
+      "id": 124,
+      "soundex": "A5023020B05306",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настасія Бондаренко",
+      "Transliterated name": "Nastasia Bondarenko",
+      "expected": "Nastasiia Bondarenko",
+      "id": 125,
+      "soundex": "N023020B053060520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настя Бондарчук",
+      "Transliterated name": "Nasta Bondarcuk",
+      "expected": "Nastia Bondarchuk",
+      "id": 126,
+      "soundex": "N0230B05306202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Наста Бондарець",
+      "Transliterated name": "Nasta Bondarec",
+      "expected": "Nasta Bondarets",
+      "id": 127,
+      "soundex": "N0230B0530602",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настка Боднар",
+      "Transliterated name": "Nastka Bodnar",
+      "expected": "Nastka Bodnar",
+      "id": 128,
+      "soundex": "N02320B03506",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Алфей Мурашка",
+      "Transliterated name": "Alfej Muraska",
+      "expected": "Alfei Murashka",
+      "id": 129,
+      "soundex": "A4102M06020",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Алфій Мурашко",
+      "Transliterated name": "Alfij Murasko",
+      "expected": "Alfii Murashko",
+      "id": 130,
+      "soundex": "A4102M06020",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Артемізія Скринник",
+      "Transliterated name": "Artemizia Skrinnik",
+      "expected": "Artemiziia Skrynnyk",
+      "id": 131,
+      "soundex": "A6305020S260502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Артемісія Скриннік",
+      "Transliterated name": "Artemisia Skrinnik",
+      "expected": "Artemisiia Skrynnik",
+      "id": 132,
+      "soundex": "A6305020S260502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Артеміса Скринниченко",
+      "Transliterated name": "Artemisa Skrinnicenko",
+      "expected": "Artemisa Skrynnychenko",
+      "id": 133,
+      "soundex": "A6305020S2605020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Артеміза Скринніченко",
+      "Transliterated name": "Artemiza Skrinnicenko",
+      "expected": "Artemiza Skrynnichenko",
+      "id": 134,
+      "soundex": "A6305020S2605020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Артемія Скринничук",
+      "Transliterated name": "Artemia Skrinnicuk",
+      "expected": "Artemiia Skrynnychuk",
+      "id": 135,
+      "soundex": "A63050S26050202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настасія Кравець",
+      "Transliterated name": "Nastasia Kravec",
+      "expected": "Nastasiia Kravets",
+      "id": 136,
+      "soundex": "N023020K60102",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анастасія Кравченко",
+      "Transliterated name": "Anastasia Kravcenko",
+      "expected": "Anastasiia Kravchenko",
+      "id": 137,
+      "soundex": "A5023020K60120520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Наста Кравчук",
+      "Transliterated name": "Nasta Kravcuk",
+      "expected": "Nasta Kravchuk",
+      "id": 138,
+      "soundex": "N0230K601202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настя Кравчишин",
+      "Transliterated name": "Nasta Kravcisin",
+      "expected": "Nastia Kravchyshyn",
+      "id": 139,
+      "soundex": "N0230K60120205",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Настка Кравецький",
+      "Transliterated name": "Nastka Kraveckij",
+      "expected": "Nastka Kravetskyi",
+      "id": 140,
+      "soundex": "N02320K6010202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Ната Кравців",
+      "Transliterated name": "Nata Kravciv",
+      "expected": "Nata Kravtsiv",
+      "id": 141,
+      "soundex": "N030K601201",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Нася Кравцов",
+      "Transliterated name": "Nasa Kravcov",
+      "expected": "Nasia Kravtsov",
+      "id": 142,
+      "soundex": "N020K601201",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Анастасья Кравчина",
+      "Transliterated name": "Anastasa Kravcina",
+      "expected": "Anastasia Kravchyna",
+      "id": 143,
+      "soundex": "A5023020K6012050",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аврелія Панкратенко",
+      "Transliterated name": "Avrelia Pankratenko",
+      "expected": "Avreliia Pankratenko",
+      "id": 144,
+      "soundex": "A16040P0526030520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аурелія Панко",
+      "Transliterated name": "Aurelia Panko",
+      "expected": "Aureliia Panko",
+      "id": 145,
+      "soundex": "A06040P0520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Аурика Паненко",
+      "Transliterated name": "Aurika Panenko",
+      "expected": "Auryka Panenko",
+      "id": 146,
+      "soundex": "A06020P050520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Лев Тимофієнко",
+      "Transliterated name": "Lev Timofienko",
+      "expected": "Lev Tymofiienko",
+      "id": 147,
+      "soundex": "L010T05010520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Левко Тимошенко",
+      "Transliterated name": "Levko Timosenko",
+      "expected": "Levko Tymoshenko",
+      "id": 148,
+      "soundex": "L0120T05020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Левусь Тимощенко",
+      "Transliterated name": "Levus Timosenko",
+      "expected": "Levus Tymoshchenko",
+      "id": 149,
+      "soundex": "L0102T05020520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Левцьо Тимченко",
+      "Transliterated name": "Levco Timcenko",
+      "expected": "Levtso Tymchenko",
+      "id": 150,
+      "soundex": "L0120T0520520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Левчик Тимофійчук",
+      "Transliterated name": "Levcik Timofijcuk",
+      "expected": "Levchyk Tymofiichuk",
+      "id": 151,
+      "soundex": "L01202T05010202",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Акилина Сухенко",
+      "Transliterated name": "Akilina Suhenko",
+      "expected": "Akylyna Sukhenko",
+      "id": 152,
+      "soundex": "A204050S0520",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Килина Суханюк",
+      "Transliterated name": "Kilina Suhanuk",
+      "expected": "Kylyna Sukhaniuk",
+      "id": 153,
+      "soundex": "K04050S0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Кулина Сухенюк",
+      "Transliterated name": "Kulina Suhenuk",
+      "expected": "Kulyna Sukheniuk",
+      "id": 154,
+      "soundex": "K04050S0502",
+      "has_duplicates": true
+    },
+    {
+      "Original name": "Якилина Сушко",
+      "Transliterated name": "Akilina Susko",
+      "expected": "Yakylyna Sushko",
+      "id": 155,
+      "soundex": "A204050S020",
+      "has_duplicates": true
+    }
+  ],
+  "soundex_groups": {
+    "D060H0502": [
+      "Dara Homic",
+      "Dara Homec"
+    ],
+    "G60206R05020520": [
+      "Grigir Romasenko",
+      "Grigor Romasenko"
+    ],
+    "N020106M020520": [
+      "Nicipir Musenko",
+      "Necipir Musenko"
+    ],
+    "S02050K04025020520": [
+      "Susana Kolisnicenko",
+      "Suzanna Kolesnicenko"
+    ],
+    "A2010R050501": [
+      "Agafia Romaniv",
+      "Agapia Romanov"
+    ],
+    "A4102M06020": [
+      "Alfej Muraska",
+      "Alfij Murasko"
+    ],
+    "A6305020S260502": [
+      "Artemizia Skrinnik",
+      "Artemisia Skrinnik"
+    ],
+    "A6305020S2605020520": [
+      "Artemisa Skrinnicenko",
+      "Artemiza Skrinnicenko"
+    ],
+    "K04050S0502": [
+      "Kilina Suhanuk",
+      "Kulina Suhenuk"
+    ]
+  },
+  "stats": {
+    "total_records": 155,
+    "total_soundex_groups": 146,
+    "duplicate_groups": 9,
+    "potential_duplicates": 18
+  }
+}
