@@ -22,8 +22,8 @@ def create_soundex_groups(names, surnames):
     for name,surname in zip(names,surnames):
         code = soundex(name) + soundex(surname)
         if code not in soundex_groups:
-            soundex_groups[code] = [name] # add name to the group
-        else: soundex_groups[code].append(name + surname) #TODO put in dictionary name and surname
+            soundex_groups[code] = [name+ " " + surname] # add name to the group
+        else: soundex_groups[code].append(name + " " +  surname) #TODO put in dictionary name and surname
 
     return soundex_groups
 
@@ -35,7 +35,7 @@ def compute_nb_duplicated(soundex_groups):
     return nb_duplicates
 
 def graph_data_new(dataset, col_name="name", col_surname="surname"):
-    """take the csv and outpuit data for graph visualization"""
+    """take the csv and output data for graph visualization"""
 
     names = dataset[col_name].to_list()
     surnames = dataset[col_surname].to_list()
@@ -73,48 +73,48 @@ def graph_data_new(dataset, col_name="name", col_surname="surname"):
 
     return result
 
-def create_soundex_groups_old(names):
-    soundex_groups={}
-    for name in names:
-        code = soundex(name) 
-        if code not in soundex_groups:
-            soundex_groups[code] = [name] # add name to the group
-        else: soundex_groups[code].append(name) #TODO put in dictionary name and surname
+# def create_soundex_groups_old(names):
+#     soundex_groups={}
+#     for name in names:
+#         code = soundex(name) 
+#         if code not in soundex_groups:
+#             soundex_groups[code] = [name] # add name to the group
+#         else: soundex_groups[code].append(name) #TODO put in dictionary name and surname
 
-    return soundex_groups
+#     return soundex_groups
 
-def graph_data(transliterated_names):
-    """Take the result of soundex and put it in json for graph view
+# def graph_data(transliterated_names):
+#     """Take the result of soundex and put it in json for graph view
 
-    Args:
-        soundex_groups (_type_): _description_
-    """
+#     Args:
+#         soundex_groups (_type_): _description_
+#     """
 
-    soundex_groups = create_soundex_groups_old(transliterated_names)
+#     soundex_groups = create_soundex_groups_old(transliterated_names)
 
-    # Filter to only groups with potential duplicates
-    duplicate_groups = {
-        code: group for code, group in soundex_groups.items() 
-        if len(group) > 1
-    }
+#     # Filter to only groups with potential duplicates
+#     duplicate_groups = {
+#         code: group for code, group in soundex_groups.items() 
+#         if len(group) > 1
+#     }
 
-    # Prepare data for visualization
-    all_names = []
-    for group in duplicate_groups.values():
-        all_names.extend(group)
+#     # Prepare data for visualization
+#     all_names = []
+#     for group in duplicate_groups.values():
+#         all_names.extend(group)
 
-    result = {
-        'duplicate_groups': duplicate_groups,
-        'all_duplicates': all_names,
-        'stats': {
-            'total_records': len(transliterated_names),
-            'total_soundex_groups': len(soundex_groups),
-            'duplicate_groups': len(duplicate_groups),
-            'potential_duplicates': len(all_names)
-        }
-    }
+#     result = {
+#         'duplicate_groups': duplicate_groups,
+#         'all_duplicates': all_names,
+#         'stats': {
+#             'total_records': len(transliterated_names),
+#             'total_soundex_groups': len(soundex_groups),
+#             'duplicate_groups': len(duplicate_groups),
+#             'potential_duplicates': len(all_names)
+#         }
+#     }
 
-    return result
+#     return result
 
 
 if __name__ == "__main__":

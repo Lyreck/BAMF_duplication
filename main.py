@@ -1,5 +1,5 @@
 import polars as pl
-from scripts import graph_data, graph_data_new, export_for_visualization
+from scripts import graph_data_new, export_for_visualization
 def main():
     print("Hello from reverse-engineering!")
 
@@ -14,10 +14,15 @@ def main():
     for col in UA_transliterated.select(pl.col(pl.Utf8)).columns:
         UA_transliterated = UA_transliterated.with_columns(
             pl.col(col)
-            .str.replace_all(r"['č]", "")
+            .str.replace_all(r"['']", "")
+            .str.replace_all(r"[č]", "ch")
             .str.replace_all(r"\s", "")
             .alias(col)
         )
+
+    print(UA_transliterated)
+
+    UA_transliterated.write_csv('UA_transliterated.csv')
 
     ## Compute soundex groups
 

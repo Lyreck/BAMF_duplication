@@ -356,16 +356,17 @@
 
         function searchNames() {
             const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
-
+            
             if (!graphData || !searchTerm) {
                 clearSearch();
                 return;
             }
-
+            
             searchResults = graphData.nodes
                 .map((n, i) => ({...n, index: i}))
-                .filter(n => n.name.toLowerCase().includes(searchTerm));
-
+                .filter(n => n['Transliterated name'].toLowerCase().includes(searchTerm) || 
+                            n['Original name'].toLowerCase().includes(searchTerm));
+            
             highlightSearchResults();
         }
 
@@ -415,13 +416,15 @@
 
             const nodes = graphData.nodes.map((n, i) => ({
                 id: i,
-                name: n.name,
+                name: n['Transliterated name'],
+                original: n['Original name'],
                 expected: n.expected,
                 recordId: n.id,
                 soundex: n.soundex,
                 has_duplicates: n.has_duplicates,
                 connections: 0
             }));
+
 
             // Create links based on Levenshtein similarity
             const links = [];
@@ -576,33 +579,34 @@
 
         function showTooltip(event, d) {
             const threshold = document.getElementById("threshold").value / 100;
-
+            
             const duplicates = graphData.nodes
-                .filter(n => n.id !== d.recordId && levenshteinSimilarity(d.name, n.name) >= threshold)
-                .map(n => `${n.name} (ID: ${n.id}) ${(levenshteinSimilarity(d.name, n.name) * 100).toFixed(0)}%`)
+                .filter(n => n.id !== d.recordId && levenshteinSimilarity(d.name, n['Transliterated name']) >= threshold)
+                .map(n => `${n['Transliterated name']} (ID: ${n.id}) ${(levenshteinSimilarity(d.name, n['Transliterated name']) * 100).toFixed(0)}%`)
                 .join('<br>');
-
+            
             // Find which soundex group this name belongs to
             let sameSoundex = '';
             let soundexCode = 'N/A';
-
+            
             if (graphData && graphData.soundex_groups) {
                 for (const [code, names] of Object.entries(graphData.soundex_groups)) {
                     if (names.includes(d.name)) {
                         soundexCode = code;
                         // Filter by record ID, not just name
-                        const otherNodes = graphData.nodes.filter(n =>
-                            n.id !== d.recordId && names.includes(n.name)
+                        const otherNodes = graphData.nodes.filter(n => 
+                            n.id !== d.recordId && names.includes(n['Transliterated name'])
                         );
-                        sameSoundex = otherNodes.map(n => `${n.name} (ID: ${n.id})`).join(', ');
+                        sameSoundex = otherNodes.map(n => `${n['Transliterated name']} (ID: ${n.id})`).join(', ');
                         break;
                     }
                 }
             }
-
+            
             const tooltip = document.getElementById("tooltip");
             tooltip.innerHTML = `
                 <strong>${d.name}</strong><br>
+                <small>Original: ${d.original}</small><br>
                 <small>ID: ${d.recordId} | Expected: ${d.expected}</small><br>
                 <small>Soundex: ${soundexCode}</small><br>
                 Levenshtein Connections: ${d.connections}<br>
