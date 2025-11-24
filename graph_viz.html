@@ -244,7 +244,7 @@
             </div>
             <div class="legend-item">
                 <span class="legend-color" style="background: #a855f7;"></span>
-                <span>Same Soundex Group</span>
+                <span>Same Soundex Group (appears on click)</span>
             </div>
         </div>
     </div>
@@ -257,16 +257,16 @@
             <div class="stat-label">Total Names</div>
         </div>
         <div class="stat">
-            <div class="stat-value" id="totalLinks">0</div>
-            <div class="stat-label">Connections (Levenshtein)</div>
+            <div class="stat-value" id="clustersLevenshtein">0</div>
+            <div class="stat-label">Clusters (Levenshtein-Damerau)</div>
         </div>
+        <!-- <div class="stat">
+            <div class="stat-value" id="clustersSoundex">0</div>
+            <div class="stat-label">Clusters (Soundex)</div>
+        </div> -->
         <div class="stat">
-            <div class="stat-value" id="soundexGroups">0</div>
-            <div class="stat-label">Soundex Groups</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="clusters">0</div>
-            <div class="stat-label">Duplicate Clusters</div>
+            <div class="stat-value" id="duplicatesLevenshtein">0</div> 
+            <div class="stat-label">% of people merged (Levenshtein-Damerau)</div>
         </div>
     </div>
 
@@ -474,9 +474,10 @@
 
             // Update stats
             document.getElementById("totalNodes").textContent = nodes.length;
-            document.getElementById("totalLinks").textContent = links.length;
-            document.getElementById("soundexGroups").textContent = soundexSet.size;
-            document.getElementById("clusters").textContent = clusterCount;
+            document.getElementById("clustersLevenshtein").textContent = clusterCount;
+            // document.getElementById("clustersSoundex").textContent = soundexSet.size;
+            const count = nodes.filter(n => n.connections > 0).length;
+            document.getElementById("duplicatesLevenshtein").textContent = ((count / nodes.length) * 100).toFixed(0) + "%";
 
             // Clear existing
             g.selectAll("*").remove();
@@ -639,16 +640,16 @@
                     // Fallback sample data (same shape as expected JSON)
                     graphData = {
                         "nodes": [
-                            {"name": "Muhammad", "expected": "Muhammad", "id": "1", "soundex": "M530", "has_duplicates": true},
-                            {"name": "Mohammed", "expected": "Muhammad", "id": "2", "soundex": "M530", "has_duplicates": true},
-                            {"name": "Mohamed", "expected": "Muhammad", "id": "3", "soundex": "M530", "has_duplicates": true},
-                            {"name": "Zhang", "expected": "Zhang", "id": "4", "soundex": "Z520", "has_duplicates": true},
-                            {"name": "Chang", "expected": "Zhang", "id": "5", "soundex": "C520", "has_duplicates": true},
-                            {"name": "Evgeny", "expected": "Yevgeny", "id": "6", "soundex": "E125", "has_duplicates": true},
-                            {"name": "Yevgeniy", "expected": "Yevgeny", "id": "7", "soundex": "Y125", "has_duplicates": true},
-                            {"name": "Smith", "expected": "Smith", "id": "8", "soundex": "S530", "has_duplicates": true},
-                            {"name": "Smyth", "expected": "Smith", "id": "9", "soundex": "S530", "has_duplicates": true},
-                            {"name": "Johnson", "expected": "Johnson", "id": "10", "soundex": "J525", "has_duplicates": false}
+                            {"Original name":"", "Transliterated name": "Muhammad", "expected": "Muhammad", "id": "1", "soundex": "M530", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Mohammed", "expected": "Muhammad", "id": "2", "soundex": "M530", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Mohamed", "expected": "Muhammad", "id": "3", "soundex": "M530", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Zhang", "expected": "Zhang", "id": "4", "soundex": "Z520", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Chang", "expected": "Zhang", "id": "5", "soundex": "C520", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Evgeny", "expected": "Yevgeny", "id": "6", "soundex": "E125", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Yevgeniy", "expected": "Yevgeny", "id": "7", "soundex": "Y125", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Smith", "expected": "Smith", "id": "8", "soundex": "S530", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Smyth", "expected": "Smith", "id": "9", "soundex": "S530", "has_duplicates": true},
+                            {"Original name":"", "Transliterated name": "Johnson", "expected": "Johnson", "id": "10", "soundex": "J525", "has_duplicates": false}
                         ],
                         "soundex_groups": {
                             "M530": ["Muhammad", "Mohammed", "Mohamed"],
@@ -656,8 +657,8 @@
                         },
                         "stats": {
                             "total_records": 10,
-                            "duplicate_groups": 2,
-                            "potential_duplicates": 9
+                            "n_soundex_groups": 2,
+                            "n_soundex_merges": 9
                         }
                     };
                     updateGraph();

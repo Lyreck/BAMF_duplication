@@ -1,5 +1,7 @@
 import polars as pl
 from scripts import graph_data, export_for_visualization
+from scripts import duplicates_levenshtein, create_list_fullnames
+
 def main():
     print("Hello from reverse-engineering!")
 
@@ -34,16 +36,31 @@ def main():
     data_kmu_UA = graph_data(UA_transliterated, col_name="name_kmu", col_surname="surname_kmu")
 
 
+
     ## compute statistics
+    threshold=90 #levenshtein threshold
+
     n_names = data_icu_UA['stats']['total_records']
     n_groups = data_icu_UA['stats']['n_soundex_groups']
     n_soundex_merged = data_icu_UA['stats']['n_soundex_merges']
+
+    list_soundex_merged = []
+    for v in data_icu_UA["soundex_groups"].values():
+        list_soundex_merged.extend(v)
+    n_levenshtein_merged, list_levenshtein_merged = duplicates_levenshtein(create_list_fullnames(UA_transliterated,"name_icu","surname_icu"), threshold=threshold)
+
+    print(list_soundex_merged)
+    print(list_levenshtein_merged)
+    merged_soundex_levenshtein = list(set(list_soundex_merged) & set(list_levenshtein_merged))
+    n_merged_soundex_levenshtein = len(merged_soundex_levenshtein)
 
     print(f"\nSoundex stats:")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
     print(f"  Duplicates detected with Soundex: {n_soundex_merged}")
-    print(f"Percentage of duplicates found = {n_soundex_merged/n_names*100:.2f} %")
+    print(f"  Percentage of duplicates found with Soundex= {n_soundex_merged/n_names*100:.2f} %")
+    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold})= {n_levenshtein_merged/n_names*100:.2f} %")
+    print(f"  Percentage of duplicates found with both methods (threshold={threshold})= {n_merged_soundex_levenshtein/n_names*100:.2f} %")
 
     
 
