@@ -35,7 +35,7 @@ def compute_nb_duplicates(soundex_groups):
         if nb>1: nb_duplicates+=nb
     return nb_duplicates
 
-def graph_data(dataset, col_name="name", col_surname="surname", official_name="name_kmu", official_surname="surname_kmu", output_file='json_viz/graph_data2.json'):
+def graph_data(dataset, col_name="name", col_surname="surname", output_file='json_viz/graph_data2.json', official_name="name_kmu", official_surname="surname_kmu"):
     """take the csv and output data for graph visualization"""
 
     names = dataset[col_name].to_list()
