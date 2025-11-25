@@ -3,6 +3,7 @@ import cyrtranslit as ctlt
 from translitua import translit, UkrainianKMU, UkrainianGerman, UkrainianBritish
 from translit_llm import run_llm
 # import icu
+import potnia
 import polars as pl 
 # Dataset structure : 
 # language, name, surname
@@ -41,6 +42,9 @@ def llm_fn(x:str) -> str:
     if x is None:
         return None
     return run_llm(x, "ukrainian", "mistral-small3.2")
+
+def din31635_fn(x:str) -> str:
+    transliterator = potnia.Transliterator("din31635")
 
 def clean_df(df:pl.DataFrame) -> pl.DataFrame:
 
@@ -85,10 +89,17 @@ def add_transliterations_icu(df: pl.DataFrame, name_col="name", surn_col="surnam
 
 if __name__ == "__main__":
 
-    df = pl.read_csv("create_dataset/UA_paired.csv", encoding="utf8")
+    # df = pl.read_csv("create_dataset/UA_paired.csv", encoding="utf8")
 
-    df_out = add_transliterations(df)
-    # df_out = add_transliterations_icu(df) #for machine with icu installed
-    df_out.write_csv('UA_transliterated.csv')
+    # df_out = add_transliterations(df)
+    # # df_out = add_transliterations_icu(df) #for machine with icu installed
+    # df_out.write_csv('UA_transliterated.csv')
 
-    print(df_out)
+    # print(df_out)
+
+        # Exemple : translittérer un mot arabe (Unicode) vers latin
+    arabic_text = "محمد"
+    # Si Potnia supporte l'arabe → latin, utilise :
+    transliterator = potnia.Transliterator("din31635")
+    latin_text = transliterator.reverse(arabic_text)  # ou une méthode similaire
+    print(latin_text)  # Résultat attendu : "muḥammad" (selon DIN 31635)
