@@ -177,6 +177,25 @@
         .link.dimmed {
             opacity: 0.1;
         }
+
+        footer {
+            background: #0f3460;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            font-size: 12px;
+            color: #aaa;
+        }
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-section {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -185,21 +204,20 @@
 
         <div class="info-box">
             <p><strong>❗ How it works:</strong></p>
-            <p>The clustering algorithm uses phonetics and orthographic resemblance to match names and surnames.</p>
-            <p>You can adjust the threshold slider to control the tolerance on orthographic errors.</p>
-            <p>You must first load data. Data is available as a simple sample, and pre-loaded datasets are made available.</p>
-            <p>You can also choose to import your own JSON file (see below).</p>
+            <p>The clustering algorithm uses phonetics (soundex) and orthographic (Levenshtein-Damerau) resemblance to match names and surnames.</p>
+            <p>You can adjust the threshold slider to control the tolerance on orthographic errors (the higher the threshold, the smaller the tolerance).</p>
+            <p>To begin with, you must first load data. "Load sample data" will just give you a non-realistic example to play with.  </p>
+            <p>Pre-computed datasets are available (select "Load from Server", then select the file you want and finally click "Load").</p>
+            <p>Finally, you can also chose to load your own JSON file.</p>
         </div>
 
 
         <div class="control-group" style="margin-top: 15px;">
             <label>Load Data:</label>
             <select id="dataSourceSelect" style="width: 250px; padding: 8px; background: #0f3460; color: #eee; border: 1px solid #444; border-radius: 4px;">
-                <option value="upload">Load JSON Data (Upload)</option>
                 <option value="server">Load from Server</option>
+                <option value="upload">Load JSON Data (Upload)</option>
             </select>
-            <button onclick="loadSelectedData()">Load</button>
-            <button onclick="loadSampleData()">Load Sample Data</button>
         </div>
 
         <div class="control-group">
@@ -207,6 +225,8 @@
             <select id="remoteFileSelect" style="width: 250px; padding: 8px; background: #0f3460; color: #eee; border: 1px solid #444; border-radius: 4px;">
                 <option value="">Select a file...</option>
             </select>
+            <button onclick="loadSelectedData()">Load</button>
+            <button onclick="loadSampleData()">Load Sample Data</button>
         </div>
 
         <div class="control-group">
@@ -272,6 +292,22 @@
 
     <div class="tooltip" id="tooltip"></div>
     <input type="file" id="fileInput" accept=".json" style="display: none;">
+
+    <footer>
+        <div class="footer-section">
+            2025 Data and Public Policy algorithm investigation. This is a prototype.
+        </div>
+        <div class="footer-section">
+            <a href="https://github.com/Lyreck/BAMF_duplication" target="_blank">View project on GitHub</a>
+        </div>
+        <div class="footer-section">
+            <strong>Acknowledgements:</strong><br>
+            We thank all the open source contributors whose work was used for this tool. D3.js
+            for the graph vizualisation, python-levenshtein and phonetics for Soundex, ollama-python,
+            PyICU, cyrtranslit and UATransliterate for transliteration. Polars dataframes for dataset manipulation.
+            This web interface was "vibecoded" using Claude by Anthropic.
+        </div>
+    </footer>
 
     <script>
         // SERVER CONFIGURATION
