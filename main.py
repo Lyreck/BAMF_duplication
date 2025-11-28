@@ -52,16 +52,18 @@ def main():
     print(list_levenshtein_merged)
 
     merged_soundex_levenshtein = list(set(list_soundex_merged) & set(list_levenshtein_merged))
-    n_merged_soundex_levenshtein = len(merged_soundex_levenshtein)
+    n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
 
     print("="*60)
-    print(f"\nStats (method = ICU, language = Ukrainian):")
+    print(f"\nStats (method = kmu, language = Ukrainian):")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
+    print(f"  Duplicates detected with Levenshtein: {n_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
     print(f"  Duplicates detected with Soundex: {n_soundex_merged}")
     print(f"  Percentage of duplicates found with Soundex= {n_soundex_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_merged_soundex_levenshtein/n_names*100:.2f} %")
+    print(f"  Duplicates detected with Levenshtein+Soundex: {n_soundex_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_soundex_levenshtein_merged/n_names*100:.2f} %")
 
 
     ###### stats llm
@@ -76,16 +78,18 @@ def main():
     n_levenshtein_merged, list_levenshtein_merged = duplicates_levenshtein(create_list_fullnames(UA_transliterated,"name_llm","surname_llm"), threshold=threshold)
 
     merged_soundex_levenshtein = list(set(list_soundex_merged) & set(list_levenshtein_merged))
-    n_merged_soundex_levenshtein = len(merged_soundex_levenshtein)
+    n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
 
     print("="*60)
-    print(f"\nStats (method = LLM, language = Ukrainian):")
+    print(f"\nStats (method = kmu, language = Ukrainian):")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
+    print(f"  Duplicates detected with Levenshtein: {n_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
     print(f"  Duplicates detected with Soundex: {n_soundex_merged}")
     print(f"  Percentage of duplicates found with Soundex= {n_soundex_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_merged_soundex_levenshtein/n_names*100:.2f} %")
+    print(f"  Duplicates detected with Levenshtein+Soundex: {n_soundex_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_soundex_levenshtein_merged/n_names*100:.2f} %")
 
 
     ###### stats kmu
@@ -100,16 +104,18 @@ def main():
     n_levenshtein_merged, list_levenshtein_merged = duplicates_levenshtein(create_list_fullnames(UA_transliterated,"name_kmu","surname_kmu"), threshold=threshold)
 
     merged_soundex_levenshtein = list(set(list_soundex_merged) & set(list_levenshtein_merged))
-    n_merged_soundex_levenshtein = len(merged_soundex_levenshtein)
+    n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
 
     print("="*60)
     print(f"\nStats (method = kmu, language = Ukrainian):")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
+    print(f"  Duplicates detected with Levenshtein: {n_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
     print(f"  Duplicates detected with Soundex: {n_soundex_merged}")
     print(f"  Percentage of duplicates found with Soundex= {n_soundex_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with Levenshtein (threshold={threshold}%)= {n_levenshtein_merged/n_names*100:.2f} %")
-    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_merged_soundex_levenshtein/n_names*100:.2f} %")
+    print(f"  Duplicates detected with Levenshtein+Soundex: {n_soundex_levenshtein_merged}")
+    print(f"  Percentage of duplicates found with both methods (threshold={threshold}%)= {n_soundex_levenshtein_merged/n_names*100:.2f} %")
 
 
     

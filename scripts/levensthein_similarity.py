@@ -37,8 +37,6 @@ def duplicates_levenshtein(strings: list[str], threshold: float = 80.0) -> int:
     for i in range(n):
         for j in range(i + 1, n):
             sim = levenshtein_damerau_similarity(strings[i], strings[j])
-            if ('Agafia Romaniv' in [strings[i],strings[j]]) and ("Gafia Romanij" in [strings[i],strings[j]]): 
-                print(f"Hello wtf {sim}")
             if sim >= threshold:
                 unique_nodes_above_threshold.add(i)
                 unique_nodes_above_threshold.add(j)
