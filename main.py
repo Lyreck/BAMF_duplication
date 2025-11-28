@@ -38,7 +38,7 @@ def main():
 
 
     ## compute statistics
-    threshold=85 #levenshtein threshold
+    threshold=90 #levenshtein threshold
 
     n_names = data_icu_UA['stats']['total_records']
     n_groups = data_icu_UA['stats']['n_soundex_groups']
@@ -53,7 +53,7 @@ def main():
     n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
 
     print("="*60)
-    print(f"\nStats (method = kmu, language = Ukrainian):")
+    print(f"\nStats (method = ICU, language = Ukrainian):")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
     print(f"  Duplicates detected with Levenshtein: {n_levenshtein_merged}")
@@ -79,7 +79,7 @@ def main():
     n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
 
     print("="*60)
-    print(f"\nStats (method = kmu, language = Ukrainian):")
+    print(f"\nStats (method = LLM, language = Ukrainian):")
     print(f"  Number of names in dataset: {n_names}")
     print(f"  Number of clusters detected with Soundex: {n_groups}")
     print(f"  Duplicates detected with Levenshtein: {n_levenshtein_merged}")
