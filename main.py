@@ -48,8 +48,6 @@ def main():
     for v in data_icu_UA["soundex_groups"].values():
         list_soundex_merged.extend(v)
     n_levenshtein_merged, list_levenshtein_merged = duplicates_levenshtein(create_list_fullnames(UA_transliterated,"name_icu","surname_icu"), threshold=threshold)
-    print(f" is {n_levenshtein_merged} = 35 ?")
-    print(list_levenshtein_merged)
 
     merged_soundex_levenshtein = list(set(list_soundex_merged) & set(list_levenshtein_merged))
     n_soundex_levenshtein_merged = len(merged_soundex_levenshtein)
