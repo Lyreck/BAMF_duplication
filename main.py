@@ -38,7 +38,7 @@ def main():
 
 
     ## compute statistics
-    threshold=90 #levenshtein threshold
+    threshold=89 #levenshtein threshold
 
     n_names = data_icu_UA['stats']['total_records']
     n_groups = data_icu_UA['stats']['n_soundex_groups']

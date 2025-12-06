@@ -37,6 +37,8 @@ def duplicates_levenshtein(strings: list[str], threshold: float = 80.0) -> int:
     for i in range(n):
         for j in range(i + 1, n):
             sim = levenshtein_damerau_similarity(strings[i], strings[j])
+            if (strings[i] in ["Artemisa Skrinnincenko", "Artemiza Skrinnicenko"]) and (strings[j] in ["Artemisa Skrinnincenko", "Artemiza Skrinnicenko"]):
+                print(sim)
             if sim >= threshold:
                 unique_nodes_above_threshold.add(i)
                 unique_nodes_above_threshold.add(j)
