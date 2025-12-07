@@ -7,7 +7,7 @@ This code is the technical reverse-engineerering part. It is used in this webpag
 You can reproduce this project on your local machine by using uv for most of the packages - except ICU transliteration.
 
 1. Clone the repository to ~/filename
-2. synchronize the dependencies specified in pyproject.toml: `uv sync`
+2. move to ~/filename and synchronize the dependencies specified in pyproject.toml: `uv sync`
 3. install ICU and PyICU (/!\ It is not included in pyproject.toml since installation of ICU is a bit complex: see next section)
 
 To run the LLM transliteration, you need at least a 15Gb GPU since Mistral-small3.2 weighs 15Gb.
@@ -16,7 +16,7 @@ To run the LLM transliteration, you need at least a 15Gb GPU since Mistral-small
 
 ### Mac OS with Homebrew
 
-This is the easiest way we found to install ICU and then PyICU with uv. It is not perfect since pyproject.toml is not updated.
+This is the easiest way we found to install ICU and then PyICU with uv. It is not perfect since pyproject.toml is not updated when installing, which means PyICU gets uninstalled at each `uv sync` or `uv remove XX`.
 1. install ICU: `brew install icu4c`
 2. install PyICU in your local uv environment:
 ```bash
@@ -40,3 +40,4 @@ To install on other platforms with other methods, please refer to
 
 
 Feel free to reach out if you have any questions or remarks!
+
