@@ -33,11 +33,12 @@ This is the easiest way we found to install ICU and then PyICU with uv. It is no
 ```
 
 ### Other methods
-To install on other platforms with other methods, please refer to
+To install on other platforms with other methods, please refer to:
 - the official [ICU documentation](https://unicode-org.github.io/icu/userguide/)
 - the official [PyICU documentation](https://pypi.org/project/pyicu/)
 - this guide we found useful: [PyICU cheat sheet](https://gist.github.com/dpk/8325992)
 
 
 Feel free to reach out if you have any questions or remarks!
+
 
