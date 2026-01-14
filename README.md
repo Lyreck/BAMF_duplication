@@ -1,7 +1,7 @@
 # Reverse engineering of name transliteration and matching in immigration databases
 
 This code is linked to our paper on the German and UK's management of immigration databases. We analyzed their use of name transliteration and duplicate detection through a legal, societal and technical lens. 
-This code is the technical reverse-engineerering part. It is used in this webpage: [project prototype](https://leo.le.douar.ec/sections/graph_viz.html).
+This code is the technical reverse-engineering part. It is used in this webpage: [project prototype](https://leo.le.douar.ec/sections/graph_viz.html).
 
 ## Installation
 You can reproduce this project on your local machine by using uv for most of the packages - except ICU transliteration.
@@ -40,5 +40,6 @@ To install on other platforms with other methods, please refer to:
 
 
 Feel free to reach out if you have any questions or remarks!
+
 
 
